@@ -5,6 +5,7 @@ scripts and key wordlists used for OSCP/PWK
 1. nmap -p-, -sU, -sV, -A 
 
 --script vuln
+
 2. Onesixtyone, enum4linux,
 
 FTP?
