@@ -23,15 +23,19 @@ Burp if needed
 7. Screenshot proof with ifconfig
 
 ***
+# checklist
+#### Network Sweep
+'''netdiscover, nbtscan -r ​192.168.1.1-254​, nmap -sn Host Machine'''
+Scan every service port: 
+'''nmap-p-
+nmap-sV
+nmap-A
+nmap-sU-F/--open
+nmap-p445--scriptsafe 
 
-Network Sweep
-● netdiscover, nbtscan -r ​192.168.1.1-254​, nmap -sn Host Machine
-● Scan every service port: ○ nmap-p-
-   ○ nmap-sV
-○ nmap-A
-○ nmap-sU-F/--open
-○ nmap-p445--scriptsafe ○ nc -nv 10.11.1.209 666;
-​interact with strange ports.
+nc -nv 10.11.1.209 666;  interact with strange ports.
+
+'''
 ■ Run ​Searchsploit​ against all enumerated services AND google
 ● CHECK FOR EXPLOITS
 site:exploit-db APP VERSION
