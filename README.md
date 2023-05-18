@@ -9,7 +9,6 @@ FTP?
 3. Nikto, gobuster, curl,
 Burp if needed
 4. FTP, LFI, SQLi/Union 
-
 OR 
 OS Inject
 
