@@ -18,4 +18,5 @@ shitty webapp exploit - view pagesource
 
 5. Shell
 6. Root
+
 Screenshot proof with ifconfig
