@@ -18,9 +18,6 @@ Burp if needed
 OR 
 shitty webapp exploit - view pagesource
 
-OR 
-shitty 3rd party application exploit - exploitdb/searchsploit
-
 5. Shell
 6. Root
 7. Screenshot proof with ifconfig
