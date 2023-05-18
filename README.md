@@ -12,6 +12,7 @@ Burp if needed
 
 OR 
 OS Inject
+
 OR 
 shitty webapp exploit - view pagesource
 
