@@ -22,6 +22,24 @@ Burp if needed
 6. Root
 7. Screenshot proof with ifconfig
 
+
+* * *
+
+# TTY
+
+```bash
+ctrl + Z
+stty raw -echo; fg
+stty rows 200 stty cols 200
+export TERM=xterm-256color
+
+exec /bin/bash
+or
+python -c 'import pty;pty.spawn("/bin/bash")
+```
+
+* * *
+
 ***
 # checklist
 #### Network Sweep
