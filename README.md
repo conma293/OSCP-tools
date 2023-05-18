@@ -25,33 +25,23 @@ Burp if needed
 
 * * *
 
-# TTY
+# Network Sweep
 
-```bash
-ctrl + Z
-stty raw -echo; fg
-stty rows 200 stty cols 200
-export TERM=xterm-256color
-
-exec /bin/bash
-or
-python -c 'import pty;pty.spawn("/bin/bash")
 ```
-
-* * *
-
-***
-# checklist
-#### Network Sweep
-'''netdiscover, nbtscan -r ​192.168.1.1-254​, nmap -sn Host Machine'''
+netdiscover, nbtscan -r ​192.168.1.1-254​, nmap -sn Host Machine
 Scan every service port: 
-'''nmap-p-
+nmap-p-
 nmap-sV
 nmap-A
 nmap-sU-F/--open
 nmap-p445--scriptsafe 
 
 nc -nv 10.11.1.209 666;  interact with strange ports.
+```
+
+* * *
+
+
 
 '''
 ■ Run ​Searchsploit​ against all enumerated services AND google
