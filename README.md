@@ -9,8 +9,8 @@ FTP?
 3. Nikto, gobuster, curl,
 Burp if needed
 4. FTP, LFI, SQLi/Union 
-or OS Inject
-Or shitty webapp exploit - view pagesource
+;OR OS Inject
+;OR shitty webapp exploit - view pagesource
 5. Shell
 6. Root
 Screenshot proof with ifconfig
