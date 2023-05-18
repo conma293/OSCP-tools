@@ -2,8 +2,9 @@
 scripts and key wordlists used for OSCP/PWK
 
 # How to win - every machine!
-1. nmap -p-, -sU, -sV, -A --script vuln
-2. Onesixtyone, enum4linux,
+1. nmap -p-, -sU, -sV, -A 
+--script vuln
+3. Onesixtyone, enum4linux,
 FTP?
 3. Nikto, gobuster, curl,
 Burp if needed
