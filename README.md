@@ -12,9 +12,9 @@ Burp if needed
 
 OR 
 OS Inject
-
 OR 
 shitty webapp exploit - view pagesource
+
 5. Shell
 6. Root
 Screenshot proof with ifconfig
