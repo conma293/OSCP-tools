@@ -50,7 +50,8 @@ nc -nv 10.11.1.209 666;  interact with strange ports.
 ```site:exploit-db APP VERSION```
 #### Credentials
 ■ If you find credentials (SMB/SMTP/FTP Traversal), STOP WHAT YOU
-ARE DOING!! and re-use on FTP/SSH/Web services. Especially SSH -
+ARE DOING!! 
+re-use on FTP/SSH/Web services. Especially SSH -
 
 You may already have a shell!
 
