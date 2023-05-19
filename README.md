@@ -58,16 +58,23 @@ You may already have a shell!
 
 #### SMB
 ```enum4linux```
+
 ```nmblookup-A 10.11.1.31```
+
 ```smbclient -L //10.11.1.31```
+
 ```smbclient-L //RALPH -I 10.11.1.31```
+
 ```smbclient-L \\RALPH -N```
+
 ```smbclient //10.11.1.31/wwwroot```
+
 #### SNMP
 ```onesixtyone 10.11.1.13```
 
 ```snmpwalk -c public -v1 10.11.1.13```
 #### SMTP
 ■ If there is an SMTP service running enumerate for usernames (after checking for exploits)
+
 ```perl smtp-user-enum.pl -M VRFY -U names.txt -t 10.1.1.236```
 ```-> /usr/share/seclists/usernames/Names/names.txt```
