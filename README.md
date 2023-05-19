@@ -45,24 +45,28 @@ nc -nv 10.11.1.209 666;  interact with strange ports.
 
 '''
 ■ Run ​Searchsploit​ against all enumerated services AND google
-● CHECK FOR EXPLOITS
-site:exploit-db APP VERSION
- ● Credentials
-■ If you find credentials (SMB/SMTP/FTP Traversal), STOP WHAT YOU
+#### CHECK FOR EXPLOITS
+```site:exploit-db APP VERSION```
+#### Credentials
+If you find credentials (SMB/SMTP/FTP Traversal), STOP WHAT YOU
 ARE DOING!! and re-use on FTP/SSH/Web services. Especially SSH -
+
 You may already have a shell!
-Enumerate Services
-● SMB
-○ enum4linux
-○ nmblookup-A10.11.1.31
-○ smbclient -L //10.11.1.31
-○ smbclient-L//RALPH-I10.11.1.31
-○ smbclient-L\\RALPH-N
-○ smbclient//10.11.1.31/wwwroot ○
-● SNMP
-○ onesixtyone10.11.1.13
-○ snmpwalk-cpublic-v110.11.1.13
-● SMTP - ​if there is an SMTP service running it is likely it is related in some way,
-enumerate for usernames (after checking for exploits)
-○ perl smtp-user-enum.pl -M VRFY -U names.txt -t 10.1.1.236
-■ /usr/share/seclists/usernames/Names/names.txt
+
+# Enumerate Services
+
+#### SMB
+```enum4linux```
+```nmblookup-A 10.11.1.31```
+```smbclient -L //10.11.1.31```
+```smbclient-L //RALPH -I 10.11.1.31```
+```smbclient-L \\RALPH -N```
+```smbclient //10.11.1.31/wwwroot```
+#### SNMP
+```onesixtyone10.11.1.13```
+
+```snmpwalk-cpublic-v110.11.1.13```
+#### SMTP
+if there is an SMTP service running enumerate for usernames (after checking for exploits)
+```perl smtp-user-enum.pl -M VRFY -U names.txt -t 10.1.1.236```
+```-> /usr/share/seclists/usernames/Names/names.txt```
