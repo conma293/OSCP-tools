@@ -30,8 +30,8 @@ Burp if needed
 
 ```netdiscover```, ```nbtscan -r 192.168.1.1-254```, ```nmap -sn Host Machine```
 
-```
 Scan every service port: 
+```
 nmap -p-
 nmap -sV
 nmap -A
