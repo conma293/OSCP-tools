@@ -44,16 +44,15 @@ nmap -p445 --scriptsafe
 
 
 
-'''
-
 #### CHECK FOR EXPLOITS
 ■ Run ​Searchsploit​ against all enumerated services AND google
 ```site:exploit-db APP VERSION```
 #### Credentials
 ■ If you find credentials (SMB/SMTP/FTP Traversal), STOP WHAT YOU
 ARE DOING!! 
-re-use on FTP/SSH/Web services. Especially SSH -
+re-use on FTP/SSH/Web services. 
 
+Especially SSH -
 You may already have a shell!
 
 # Enumerate Services
