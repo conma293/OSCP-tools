@@ -28,7 +28,7 @@ Burp if needed
 # Network Sweep
 
 
-```netdiscover```, ```nbtscan -r 192.168.1.1-254```, ```nmap -sn Host Machine```
+```netdiscover```  ```nbtscan -r 192.168.1.1-254```  ```nmap -sn Host Machine```
 
 Scan every service port: 
 ```
