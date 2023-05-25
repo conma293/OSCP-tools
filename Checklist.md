@@ -4,6 +4,9 @@
   - SNMP
   - SMTP
 - [Investigate Other Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#investigate-other-services)
+  -  FTP
+  -  SSH
+  -  HTTPS
 - [Enumerating HTTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerating-http)
 - [Enumerate Web Application]
 - [SQLi]
