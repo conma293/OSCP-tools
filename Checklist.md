@@ -1,4 +1,4 @@
-- [Network Sweep]
+- [Network Sweep](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#network-sweep)
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
   - [SMB]
   - [SNMP]
