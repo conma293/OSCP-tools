@@ -45,10 +45,10 @@ nmap -p445 --scriptsafe
 
 
 #### CHECK FOR EXPLOITS
-■ Run ​Searchsploit​ against all enumerated services AND google
+- Run ​Searchsploit​ against all enumerated services AND google
 ```site:exploit-db APP VERSION```
 #### Credentials
-■ If you find credentials (SMB/SMTP/FTP Traversal), STOP WHAT YOU
+- If you find credentials (SMB/SMTP/FTP Traversal), STOP WHAT YOU
 ARE DOING!! 
 re-use on FTP/SSH/Web services. 
 
@@ -75,7 +75,7 @@ You may already have a shell!
 
 ```snmpwalk -c public -v1 10.11.1.13```
 #### SMTP
-■ If there is an SMTP service running enumerate for usernames (after checking for exploits)
+- If there is an SMTP service running enumerate for usernames (after checking for exploits)
 
 ```perl smtp-user-enum.pl -M VRFY -U names.txt -t 10.1.1.236```
 ```-> /usr/share/seclists/usernames/Names/names.txt```
