@@ -10,7 +10,6 @@ scripts and key wordlists used for OSCP/PWK
   - [Linux PrivEsc]
   
   
-High level tips below
 
 
 * * *
