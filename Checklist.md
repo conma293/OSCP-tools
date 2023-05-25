@@ -8,7 +8,6 @@
   -  SSH
   -  HTTPS
 - [Enumerating HTTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerating-http)
-  -  Wfuzz
 - [Enumerate Web Application]
   - WebDAV
   - LFI
