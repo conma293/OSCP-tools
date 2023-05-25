@@ -432,11 +432,7 @@ Examples:
 Bash History is also good to read through
 ```find /home/ -type f -iname ".bash_history" -exec cat {} \;```
 
-Thoroughly enumerate User folders
-```
-/home/bob/
-C:\Users\Bob
-```
+Thoroughly enumerate User folders -   ```/home/bob/```   ```C:\Users\Bob```
 
 #### Other Services
 Database - is MySQL running as root? 
