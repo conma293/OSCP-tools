@@ -22,7 +22,12 @@ Burp if needed
 6. Root
 7. Screenshot proof with ifconfig
 
-
+* * *
+- Checklist
+- PrivEsc
+  - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
+  - [Windows PrivEsc]
+  - [Linux PrivEsc]
 * * *
 # Checklist -
 # Network Sweep
