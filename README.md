@@ -23,10 +23,13 @@ Burp if needed
 7. Screenshot proof with ifconfig
 
 * * *
+
 - [Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md)
 - PrivEsc
   - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
   - [Windows PrivEsc]
   - [Linux PrivEsc]
+
+
 * * *
 
