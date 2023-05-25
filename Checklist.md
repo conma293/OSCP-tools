@@ -1,5 +1,8 @@
 - [Network Sweep]
 - [Enumerate Services]
+  - SMB
+  - SNMP
+  - SMTP
 - [Investigate Other Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#investigate-other-services)
 - [Enumerating HTTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerating-http)
 - [Enumerate Web Application]
