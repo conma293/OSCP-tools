@@ -306,7 +306,7 @@ Shell Meta-Character Examples:
 && whoami
 | whoami 
 || whoami
-%0a+whoami   _ (“\n” new line character)_
+%0a+whoami   (“\n” new line character)
 ```
 #### Unix
 ```
