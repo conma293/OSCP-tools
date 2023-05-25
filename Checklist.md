@@ -115,8 +115,11 @@ ls /..//Windows\\System32\\
 # Enumerating HTTP
 #### Web-based targets:
 ```Curl -i $IP/robots.txt```
+
 ```nikto -h 10.11.1.229```
+
 ```gobuster -u 10.11.1.229 -w /usr/share/seclist/Discover/Web/common.txt -s 200,204,301,302,307,403,500 -e```
+
   - ```/dirbuster/medium-2.3```
   
 #### Browse the website: 
