@@ -9,6 +9,9 @@ scripts and key wordlists used for OSCP/PWK
   - [Windows PrivEsc]
   - [Linux PrivEsc]
   
+- [oneliners]
+- [tools transfer]
+- [Active Directory]
   
 
 
