@@ -8,10 +8,12 @@
   -  SSH
   -  HTTPS
 - [Enumerating HTTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerating-http)
-  - WebDAV
-  - LFI/RFI
-  - LFI
+
 - [Enumerate Web Application]
+  - WebDAV
+  - LFI
+  - RFI
+  - WFuzz
 - [SQLi]
 - [OS Command Injection]
 - [Remote Code Execution](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#remote-code-execution-now-for-a-shell)
