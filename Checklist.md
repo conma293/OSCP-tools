@@ -21,9 +21,14 @@
   - [SQL Union Outfile](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#sql-union-outfile)
 - [Buffer Overflow Dev]
 - [Privilege Escalation Basics](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation)
+
+* * * 
 - [PrivEsc - Windows Checklist]
 - [PrivEsc - Linux Checklist]
-
+- [Transfer]
+- [Pivot]
+- [Oneliners]
+* * * 
 # Network Sweep
 
 
