@@ -1,20 +1,20 @@
 - [Network Sweep]
-- [Enumerate Services]
-  - SMB
-  - SNMP
-  - SMTP
+- [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
+  - [SMB]
+  - [SNMP]
+  - [SMTP]
 - [Investigate Other Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#investigate-other-services)
-  -  FTP
-  -  SSH
-  -  HTTPS
+  -  [FTP]
+  -  [SSH]
+  -  [HTTPS]
 - [Enumerating HTTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerating-http)
   - [Logon Page](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#logon-page)
 - [Enumerate Web Application](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-web-application)
-  - WebDAV
-  - LFI
-  - PHP Wrappers
-  - RFI
-  - WFuzz
+  - [WebDAV]
+  - [LFI]
+  - [PHP Wrappers]
+  - [RFI]
+  - [WFuzz]
 - [SQLi]
 - [OS Command Injection]
 - [Remote Code Execution](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#remote-code-execution-now-for-a-shell)
