@@ -125,7 +125,13 @@ ls /..//Windows\\System32\\
 #### Browse the website: 
 - Begin burpsuite and foxy proxy - ensure it is mapping
 - Manually browse wegpages, based on output from nikto and gobuster
-- Click ALL links, lookout for: logon page; comment field; LFI/RFI/SQLi -able URL; file upload; interactive OS injection; php files/pages able to be injected.
+- Click ALL links, lookout for: 
+  - logon page; 
+  - comment field; 
+  - LFI/RFI/SQLi -able URL; 
+  - file upload; 
+  - interactive OS injection; 
+  - php files/pages able to be injected.
 
 #### LOGON PAGE:
 - For all logon pages - View ```page-source``` 
