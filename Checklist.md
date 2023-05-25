@@ -83,6 +83,8 @@ ls /..//Windows\\System32\\
   - find out potential correct vhost to GET
   - is the clock skewed
   - any names that could be usernames for bruteforce/guessing.
+
+
 # Enumerating HTTP
 #### Web-based targets:
 ```Curl -i $IP/robots.txt```
@@ -94,7 +96,12 @@ ls /..//Windows\\System32\\
 - Manually browse wegpages, based on output from nikto and gobuster
 - Click ALL links, lookout for: logon page; comment field; LFI/RFI/SQLi -able URL; file upload; interactive OS injection; php files/pages able to be injected.
 #### LOGON PAGE:
-For all logon pages - View page-source; Password guessing for default webapps (PHPMyAdmin: root/null),  brute if you have Enumerated users; Attempt SQLi auth bypass using ALL the queries below, for both User and Password fields, make sure you are fuzzing the correct php file by following the authentication process in Burp:
+- For all logon pages - View ```page-source``` 
+- Password guessing for default webapps (PHPMyAdmin: root/null)
+- brute if you have Enumerated users
+- Attempt SQLi auth bypass using ALL the queries below, for both User and Password fields
+- make sure you are fuzzing the correct php file by following the authentication process in Burp:
+
 ````
 Admin' OR 1=1
 Admin' OR 1=1;
