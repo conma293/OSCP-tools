@@ -21,7 +21,7 @@
   - [SQL Union Outfile](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#sql-union-outfile)
 - [Buffer Overflow Dev]
 - [Privilege Escalation Exploits](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
-- [Privilege Escalation Basic Enumeration]
+- [Privilege Escalation Basic Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-basic-enumeration)
 
 * * * 
 - [PrivEsc - Windows Checklist]
