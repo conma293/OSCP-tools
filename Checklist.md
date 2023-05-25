@@ -5,7 +5,7 @@
 - [Enumerate Web Application]
 - [SQLi]
 - [OS Command Injection]
-- [Remote Code Execution]
+- [Remote Code Execution](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#remote-code-execution-now-for-a-shell)
 - [Buffer Overflow Dev]
 - [Privilege Escalation Basics]
 - [PrivEsc - Windows Checklist]
