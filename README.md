@@ -8,10 +8,12 @@ scripts and key wordlists used for OSCP/PWK
   - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
   - [Windows PrivEsc]
   - [Linux PrivEsc]
-  
 - [oneliners]
 - [tools transfer]
-- [Active Directory]
+
+* * *
+
+- [Active Directory Attacks]
   
 
 
