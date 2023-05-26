@@ -40,4 +40,7 @@ Burp if needed
 6. Root
 7. Screenshot proof with ifconfig
 
+* * * 
+# Other cheatsheets
 
+https://github.com/0xsyr0/OSCP
