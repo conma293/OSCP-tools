@@ -169,7 +169,7 @@ wfuzz --hh 109 -d "myusername=admin&mypassword=FUZZ&Submit=Login" -u "http://192
 hydra -L names -P /usr/share/wordlists/fasttrack.txt 192.168.1.20 http-post-form "/checklogin.php:myusername=^USER^&mypassword=^PASS^&Submit=Login:Wrong Username or Password"
 ```
 
-```sqlmap -u 10.11.1.13 --crawl=1``` - **banned do not use! **
+```sqlmap -u 10.11.1.13 --crawl=1``` - ****banned do not use! ****
 
 # Enumerate Web Application
 #### Web Application target
