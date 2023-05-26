@@ -22,7 +22,7 @@
 - [Buffer Overflow Dev](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#buffer-overflow---exploit-development)
 - [Privilege Escalation Exploits](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
 - [Privilege Escalation Basic Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-basic-enumeration)
-
+- [Essential Reading]()
 * * * 
 - [PrivEsc - Windows Checklist]
 - [PrivEsc - Linux Checklist]
