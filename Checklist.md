@@ -481,29 +481,29 @@ https://github.com/sleventyeleven/linuxprivchecker/
 
 # Essential Reading
 
-Pentest monkey - oneliners
+- Pentest monkey - oneliners
 
 https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
 
-Pentest monkey - webshells
+- Pentest monkey - webshells
 
 https://pentestmonkey.net/category/tools/web-shells
 
-webshells are also included in Kali @ ```/var/usr/share/webshells```
+  - webshells are also included in Kali @ ```/var/usr/share/webshells```
 
 
-Highon Coffee - bunch of commands ondemand
+- Highon Coffee - bunch of commands ondemand
 
 https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/#database-penetration-testing
 
 
-Fuzzy Security - Windows Privesc
+- Fuzzy Security - Windows Privesc
 
 https://fuzzysecurity.com/tutorials/16.html
 
 
-G0tm1lk - Linux Privesc
+- G0tm1lk - Linux Privesc
 
 https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
 
