@@ -22,7 +22,7 @@
 - [Buffer Overflow Dev](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#buffer-overflow---exploit-development)
 - [Privilege Escalation Exploits](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
 - [Privilege Escalation Basic Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-basic-enumeration)
-- [Essential Reading]()
+- [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 - [PrivEsc - Windows Checklist]
 - [PrivEsc - Linux Checklist]
@@ -482,21 +482,29 @@ https://github.com/sleventyeleven/linuxprivchecker/
 # Essential Reading
 
 Pentest monkey - oneliners
+
 https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
+
 Pentest monkey - webshells
+
 https://pentestmonkey.net/category/tools/web-shells
-webshells are also included in Kali @/var/usr/share/webshells
+
+webshells are also included in Kali @ ```/var/usr/share/webshells```
+
 
 Highon Coffee - bunch of commands ondemand
+
 https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/#database-penetration-testing
 
 
 Fuzzy Security - Windows Privesc
+
 https://fuzzysecurity.com/tutorials/16.html
 
 
 G0tm1lk - Linux Privesc
+
 https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
 
 #### Other guides/checklists:
