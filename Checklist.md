@@ -95,12 +95,14 @@ if there is an FTP service running it is very likely it is related in some way, 
 We are Looking for passwd files, configuration and properties files ; .ini  .cnf  logon.php ...
 ```
 ls -alh
+
 ../boot.ini
 ../WINDOWS/system32/prodspec.ini
 ../../../../Docume~1/
 ls /..//Windows\\System32\\
 //xampp//
 ../\\Inetpub\\wwwroot
+
 ../../etc/passwd
 ../../../../var/www/html
 /etc/httpd/conf/httpd.conf
