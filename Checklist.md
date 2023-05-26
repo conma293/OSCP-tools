@@ -65,13 +65,13 @@ You may already have a shell!
 #### SMB
 ```enum4linux```
 
-```nmblookup-A 10.11.1.31```
+```nmblookup -A 10.11.1.31```
 
 ```smbclient -L //10.11.1.31```
 
-```smbclient-L //RALPH -I 10.11.1.31```
+```smbclient -L //RALPH -I 10.11.1.31```
 
-```smbclient-L \\RALPH -N```
+```smbclient -L \\RALPH -N```
 
 ```smbclient //10.11.1.31/wwwroot```
 
