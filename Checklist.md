@@ -38,7 +38,7 @@
 
 ```rdesktop -d domain -u user```
 
-# Network Swee
+# Network Sweep
 
 
 ```netdiscover```  ```nbtscan -r 192.168.1.1-254```  ```nmap -sn Host Machine```
