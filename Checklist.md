@@ -1,5 +1,4 @@
 - [Network Sweep](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#network-sweep)
-- [Lat Move](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
   - [SMB]
   - [SNMP]
@@ -62,19 +61,6 @@ re-use on FTP/SSH/Web services.
 
 Especially SSH -
 You may already have a shell!
-
-# Active Directory Attacks
-[ADBasics]
-[ADAttacks](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
-
-# Lat Move
-```PsExec.exe -accepteula \\$HOSTNAME cmd```
-
-```psexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
-
-```smbexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
-
-```wmiexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
 
 # Enumerate Services
 
