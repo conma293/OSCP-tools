@@ -33,8 +33,12 @@
 - [Transfer]
 - [Pivot]
 - [Oneliners]
+
 * * * 
-# Network Sweep
+
+```rdesktop -d domain -u user```
+
+# Network Swee
 
 
 ```netdiscover```  ```nbtscan -r 192.168.1.1-254```  ```nmap -sn Host Machine```
