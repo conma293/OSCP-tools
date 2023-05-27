@@ -26,11 +26,10 @@
 - [PrivEsc - Linux Checklist]
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
-- [PrivEsc - Windows Full]
-- [PrivEsc - Linux Full]
+
+- [Active Directory]
 - [Transfer]
 - [Oneliners]
-- [Advanced Acitve Directory]
 
 * * * 
 
