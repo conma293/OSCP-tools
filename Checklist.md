@@ -75,6 +75,15 @@ You may already have a shell!
 
 ```smbclient //10.11.1.31/wwwroot```
 
+
+#### Kerberos 
+
+```./kerbrute_linux_amd64 userenum -d $DOMAIN -dc $DOMAIN_CONTROLLER usernames.txt```
+
+
+Commands
+enum4linux -A $IP
+
 #### SNMP
 ```onesixtyone 10.11.1.13```
 
