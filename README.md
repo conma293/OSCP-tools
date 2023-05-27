@@ -3,19 +3,16 @@ scripts and key wordlists used for OSCP/PWK
 
 * * *
 - [Basic Active Directory](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md)
-- [Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md)
-- PrivEsc
+  -  [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
+  -  [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
+  -  [Advanced Active Directory Reference](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
+- [Machine Enumeration Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md)
+- [Basic PrivEsc](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
   - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
-  - [Windows PrivEsc]
-  - [Linux PrivEsc]
-- [oneliners]
-- [tools transfer]
-
-* * *
-
-- [Active Directory Attacks]
-  
-
+  - [Windows PrivEsc Checklist]
+  - [Linux PrivEsc Checklist]
+- [oneliners](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/Oneliners.md)
+- [tools transfer](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/transfer.md)
 
 * * *
 
