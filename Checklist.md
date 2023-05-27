@@ -22,17 +22,19 @@
 - [Buffer Overflow Dev](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#buffer-overflow---exploit-development)
 - [Privilege Escalation Exploits](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
 - [Privilege Escalation Basic Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-basic-enumeration)
-- [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
-* * * 
 - [PrivEsc - Windows Checklist]
 - [PrivEsc - Linux Checklist]
+- [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
+* * * 
+- [PrivEsc - Windows Full]
+- [PrivEsc - Linux Full]
 - [Transfer]
-- [Pivot]
 - [Oneliners]
+- [Advanced Acitve Directory]
 
 * * * 
 
-```rdesktop -d domain -u user```
+```rdesktop -d domain -u user hostname/IP```
 
 # Network Sweep
 
