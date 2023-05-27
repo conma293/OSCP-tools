@@ -1,5 +1,8 @@
 - [Network Sweep](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#network-sweep)
 - [AD]
+  - Kerbrute
+  - Rubeus
+- Lat Move
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
   - [Kerberos]
   - [SMB]
@@ -62,7 +65,7 @@ re-use on FTP/SSH/Web services.
 Especially SSH -
 You may already have a shell!
 
-# AD 
+# Active Directory Enumeration
 [ADAttacks](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 
 #### Kerbrute
