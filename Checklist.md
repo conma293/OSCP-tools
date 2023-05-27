@@ -4,7 +4,6 @@
   - Rubeus
 - Lat Move
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
-  - [Kerberos]
   - [SMB]
   - [SNMP]
   - [SMTP]
