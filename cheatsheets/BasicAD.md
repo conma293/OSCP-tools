@@ -1,4 +1,4 @@
-  - [Kerbrute]
+  - [Kerbrute](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#kerbrute)
   - [Rubeus](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#rubeus)
   - [Roasting](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#roasting)
   - [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
