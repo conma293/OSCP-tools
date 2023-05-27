@@ -27,9 +27,12 @@
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
-- [Active Directory]
-- [Transfer]
-- [Oneliners]
+- [Basic Active Directory](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md)
+  -  [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
+  -  [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
+  -  [Advanced Active Directory Reference]
+- [oneliners](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/Oneliners.md)
+- [tools transfer](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/transfer.md)
 
 * * * 
 
