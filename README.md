@@ -2,7 +2,7 @@
 scripts and key wordlists used for OSCP/PWK
 
 * * *
-
+- [Basic Active Directory](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md)
 - [Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md)
 - PrivEsc
   - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
