@@ -1,5 +1,5 @@
 - [Network Sweep](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#network-sweep)
-- [AD]
+- [Active Directory Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#active-directory-enumeration)
   - Kerbrute
   - Rubeus
 - [Lat Move](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
