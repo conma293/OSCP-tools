@@ -2,7 +2,7 @@
   - [Rubeus]
   - [Roasting]
   - [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
-  - [Lateral Movement]
+  - [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
 
 # Kerbrute
 
