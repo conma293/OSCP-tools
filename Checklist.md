@@ -491,30 +491,43 @@ https://github.com/sleventyeleven/linuxprivchecker/
 
 # Priv-Esc (Windows) Check-List
 #### Basic System Information
-- systeminfo
-- whoami; echo %username; hostname
-- net user
-- net localgroup
-- net use
+
+```
+systeminfo
+whoami; echo %username; hostname
+net user
+net localgroup
+net use
+```
+
 #### Processes
-- tasklist /v /fi "username eq system"
-- schtasks /query /fo LIST /v
+```
+tasklist /v /fi "username eq system"
+schtasks /query /fo LIST /v
+```
 #### Password hashes
-- wce -w; fgdump; mimikatz.exe
+```wce -w
+fgdumd
+mimikatz.exe
+```
 #### Network
-- arp -a
-- ipconfig /all
-- netstat -ano
-- netstat -nr
-- route print
+```
+arp -a
+ipconfig /all
+netstat -ano
+netstat -nr
+route print
+```
 #### Firewall
-- netsh firewall show state
-- netsh firewall show config
-- netsh firewall add portopening TCP 80 "Open Port 80"
+```
+netsh firewall show state
+netsh firewall show config
+netsh firewall add portopening TCP 80 "Open Port 80"
+```
 
-
-#### Services
+# Services
 https://toshellandback.com/2015/11/24/ms-priv-esc/
+
 #### Services we can modify binpath
 - accesschk.exe -uwcqv "Authenticated Users" * /accepteula
 (weak service permissions for all authenticated users)
