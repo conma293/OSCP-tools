@@ -30,7 +30,7 @@
 
 ```john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt```
 
-```--format=krb5tgs```
+- ```--format=krb5tgs```
 
 
 # Mimikatz
