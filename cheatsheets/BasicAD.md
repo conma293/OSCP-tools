@@ -24,6 +24,8 @@
 
 ```Rubeus.exe asreproast /nowrap```
 
+  ```/format:[hashcat | john]> /outfile:Hashes.txt```
+
 ```john hash.txt```
 
 ```john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt```
