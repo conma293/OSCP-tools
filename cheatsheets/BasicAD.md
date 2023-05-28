@@ -24,7 +24,7 @@
 
 ```Rubeus.exe asreproast /nowrap```
 
-  ```/format:[hashcat | john]> /outfile:Hashes.txt```
+- ```/format:[hashcat | john]> /outfile:Hashes.txt```
 
 ```john hash.txt```
 
