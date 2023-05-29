@@ -36,7 +36,7 @@
 
 * * * 
 
-```rdesktop -d domain -u user hostname/IP```
+```rdesktop -d domain -u user -p password01 -r disk:local_folder=/path/to/shared_folder <hostname/IP> ```
 
 # Network Sweep
 
