@@ -25,7 +25,8 @@
 - [Privilege Escalation Basic Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-basic-enumeration)
 - [PrivEsc - Windows Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-windows-check-list)
   - [Basic Host recon](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-windows-check-list)
-  - [Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#services)
+  - [Services and Always Install Elevated](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#services)
+  - [Credentials and Permissions](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#credentials-and-permissions)
   - [Scripts](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#scripts-1)
 - [PrivEsc - Linux Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-linux-check-list)
   - [Basic Host recon](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#basic-system-information)
@@ -33,9 +34,9 @@
   - [Privileged mounts and Suid.c](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#look-for-privileged-nfs-mounts)
   - [Scripts](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#scripts-)
 - [Tips and Tricks](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#tips-and-tricks)
-  - [Misc stuff]
-  - [Useful lists and files on Kali]
-  - [Shells]
+  - [Misc stuff]()
+  - [Useful lists and files on Kali](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#useful-file-locations)
+  - [Shells](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#shells)
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
