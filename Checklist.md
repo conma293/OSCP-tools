@@ -117,6 +117,8 @@ ls -alh
 
 ../boot.ini
 ../WINDOWS/system32/prodspec.ini
+..WINDOWS\System32\drivers\etc\hosts
+
 ../../../../Docume~1/
 ls /..//Windows\\System32\\
 //xampp//
@@ -858,12 +860,12 @@ GO
 # If your stuck:
 #### Vector
 - Enumerate more... FROM THE TOP, do NOT SKIP ANY STEPS!!
-- When enumerating use more than one wordlist! (i.e., gobuster); also -
-did you check robots.txt?
-- page?=foo - TRY MORE HARDER for LFI/RFI/SQL UNION
+- When enumerating use more than one wordlist! (i.e., ```gobuster```); also -
+did you check ```robots.txt```?
+- ```page?=foo``` - TRY MORE HARDER for LFI/RFI/SQL UNION
 
 - Creds - If you have any usernames, throw them at other services, use
-fasttrack.lst and the enumd username variations as password.
+```fasttrack.lst``` and the enumd username variations as password.
 
 #### Shell
 - Test basic connectivity by using raw netcat to verify connection back
@@ -874,11 +876,6 @@ fasttrack.lst and the enumd username variations as password.
 
 Interesting files to look for via LFI/Traversal (REMEMBER TO USE nullbyte ```%00``` to terminate serverside for LFI)
 
-#### Windows
-```C:\boot.ini
-WINDOWS\System32\drivers\etc\hosts
-WINDOWS/system32/prodspec.ini
-```
 
 # Essential Reading
 
