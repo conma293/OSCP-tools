@@ -39,6 +39,7 @@
   - [Shells](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#shells)
     - [SQL OS Commands](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#execute-os-commands-from-within-sql)
   - [Path Manipulation](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#path-manipulation)
+- [If your stuck](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#if-your-stuck)
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
