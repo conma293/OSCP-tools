@@ -12,7 +12,7 @@
 - [Enumerate Web Application](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-web-application)
   - [WebDAV](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#webdav)
   - [LFI](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#lfirfi)
-    - [Other PHP Wrappers](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#other-php-wrappers)
+    - [Other PHP Wrappers](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#php-wrappers)
     - [Interesting File locations to try](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#interesting-file-locations-to-try)
   - [RFI](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#rfi)
   - [WFuzz](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#wfuzz)
