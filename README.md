@@ -8,7 +8,7 @@ scripts and key wordlists used for OSCP/PWK
   -  [Advanced Active Directory Reference](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 - [Machine Enumeration Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md)
 - [Basic PrivEsc](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
-  - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
+  - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - use [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
   - [Windows PrivEsc Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-windows-check-list)
   - [Linux PrivEsc Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-linux-check-list)
 - [one-liners](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/Oneliners.md)
