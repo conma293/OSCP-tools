@@ -2,7 +2,7 @@
 scripts and key wordlists used for OSCP/PWK
 
 * * *
-- [Basic Active Directory](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md)
+- [Basic Active Directory Attacks](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md)
   -  [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
   -  [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
     -  [Advanced Active Directory Reference](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
