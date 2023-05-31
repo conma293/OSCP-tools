@@ -1,8 +1,8 @@
 - [Network Sweep](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#network-sweep)
 - [Enumerate Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-services)
-  - [SMB]
-  - [SNMP]
-  - [SMTP]
+  - [SMB](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#smb)
+  - [SNMP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#snmp)
+  - [SMTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#smtp)
 - [Investigate Other Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#investigate-other-services)
   -  [FTP]
   -  [SSH]
