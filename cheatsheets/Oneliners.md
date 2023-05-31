@@ -64,9 +64,12 @@ You’ll need to authorise the target to connect to you (command also run on you
 
 ```xhost +targetip```
 
-**More:**
+* * * 
+
+**More revshells:**
 
 https://highon.coffee/blog/reverse-shell-cheat-sheet/
+
 http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
 * * * 
