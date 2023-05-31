@@ -121,3 +121,4 @@ mimikatz # kerberos::list
 
 ```wmiexec.py $DOMAIN/$USER@$HOSTNAME -k -no-pass```
 
+```rdesktop -d domain -u user -p password01 -r disk:local_folder=/path/to/shared_folder <hostname/IP> ```
