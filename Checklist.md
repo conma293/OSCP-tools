@@ -651,6 +651,7 @@ grep –vE “nologin|false” /etc/passwd
 ps aux | grep root
 netstat –antup
 ```
+# World Writable
 
 #### Find SUID files that are world-writable (or cronjob)
 ```find / -perm -u=s -type f 2>/dev/null```
@@ -669,6 +670,7 @@ gcc -o /tmp/setsuid /tmp/setsuid.c
 chmod u+s setsuid
 ```
 
+# SUID.c
 
 #### Look for privileged NFS Mounts
 
@@ -681,7 +683,7 @@ showmount -e 192.168.1.101
 mount 192.168.1.101:/ /tmp/
 ```
 
-#### SUID.c
+# Create SUID.c
 - Often SUID C binary files are required to spawn a shell as a superuser, you can update the UID / GID and shell as required..
 
 ```nano suid.c```:
