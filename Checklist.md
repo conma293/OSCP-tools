@@ -27,7 +27,8 @@
   - [Basic host recon]
   - [Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#services)
   - [Scripts](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#scripts-1)
-- [PrivEsc - Linux Checklist]()
+- [PrivEsc - Linux Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-linux-check-list)
+- [Tips and Tricks](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#tips-and-tricks)
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
