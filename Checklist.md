@@ -34,11 +34,11 @@
   - [Privileged mounts and Suid.c](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#look-for-privileged-nfs-mounts)
   - [Scripts](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#scripts-)
 - [Tips and Tricks](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#tips-and-tricks)
-  - [Misc stuff]()
+  - [Win Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#lateral-movement)
   - [Useful lists and files on Kali](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#useful-file-locations)
   - [Shells](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#shells)
-  - [Path Manipulation]
-  - [SQL OS Commands]
+    - [SQL OS Commands](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#execute-os-commands-from-within-sql)
+  - [Path Manipulation](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#path-manipulation)
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
