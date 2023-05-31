@@ -5,7 +5,6 @@ scripts and key wordlists used for OSCP/PWK
 - [Basic Active Directory Attacks](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md)
   -  [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
   -  [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
-    -  [Advanced Active Directory Reference](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 - [Machine Enumeration Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md)
 - [Basic PrivEsc](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
   - if you have _SeImpersonatePrivilege_ from ```whoami /privs``` - use [Potato/PrintSpoofer](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer)
@@ -13,6 +12,8 @@ scripts and key wordlists used for OSCP/PWK
   - [Linux PrivEsc Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-linux-check-list)
 - [one-liners](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/Oneliners.md)
 - [Tools Transfer](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/transfer.md)
+
+[Advanced Active Directory Reference](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
 
 * * *
 
@@ -38,6 +39,6 @@ Burp if needed
 7. Screenshot proof with ifconfig
 
 * * * 
-# Other cheatsheets
 
+# Other cheatsheets
 https://github.com/0xsyr0/OSCP
