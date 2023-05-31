@@ -30,8 +30,11 @@
 - [PrivEsc - Linux Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-linux-check-list)
   - [Basic Host recon](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#basic-system-information)
   - [World Writable](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#find-suid-files-that-are-world-writable-or-cronjob)
-  - [Privileged mount and Suid.c](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#look-for-privileged-nfs-mounts)
+  - [Privileged mounts and Suid.c](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#look-for-privileged-nfs-mounts)
 - [Tips and Tricks](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#tips-and-tricks)
+  - [Misc stuff]
+  - [Useful lists and files on Kali]
+  - [Shells]
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
