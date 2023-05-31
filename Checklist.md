@@ -26,6 +26,7 @@
 - [PrivEsc - Windows Checklist](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#priv-esc-windows-check-list)
   - [Basic host recon]
   - [Services](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#services)
+  - [Scripts](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#scripts-1)
 - [PrivEsc - Linux Checklist]()
 - [Essential Reading](https://github.com/conma293/OSCP-tools/blob/master/Checklist.md#essential-reading)
 * * * 
