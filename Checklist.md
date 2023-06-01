@@ -100,6 +100,8 @@ You may already have a shell!
 
 ```smbclient //10.11.1.31/wwwroot```
 
+```crackmapexec smb 10.10.10.175```
+
 #### SNMP
 ```onesixtyone 10.11.1.13```
 
