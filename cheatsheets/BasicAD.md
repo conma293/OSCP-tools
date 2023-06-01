@@ -3,6 +3,11 @@
   - [Roasting](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#roasting)
   - [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
   - [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
+# Crackmap
+
+```crackmapexec <service> [hostname/ip]```
+
+```crackmapexec smb 10.10.10.175```
 
 # Kerbrute
 
