@@ -25,7 +25,7 @@ https://www.hackingarticles.in/a-detailed-guide-on-rubeus/
 
 Brute Password spray:
 
-```Rubeus.exe brute /password:$PASSWORD /noticket```
+```Rubeus.exe brute /password:Password01 /noticket```
 
 Get tickets on System:
 
