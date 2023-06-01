@@ -31,6 +31,7 @@ https://www.hackingarticles.in/a-detailed-guide-on-rubeus/
 
 # Roasting
 https://www.pentestpartners.com/security-blog/how-to-kerberoast-like-a-boss/
+
 https://www.hackingarticles.in/as-rep-roasting/
 
 ```Rubeus.exe kerberoast /nowrap```
