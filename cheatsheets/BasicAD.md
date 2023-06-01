@@ -3,6 +3,10 @@
   - [Roasting](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#roasting)
   - [Mimikatz](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#mimikatz)
   - [Lateral Movement](https://github.com/conma293/OSCP-tools/blob/master/cheatsheets/BasicAD.md#lateral-movement)
+
+More - https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
+
+
 # Crackmap
 
 ```crackmapexec <service> [hostname/ip]```
