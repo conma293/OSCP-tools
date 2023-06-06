@@ -132,7 +132,8 @@ put webshell.aspx
 put go.exe
 ```
 
-- Directory Traversal is a likely path here…
+- Directory Traversal is also a likely path here…
+
 #### Useful Directory Traversal locations:-
 We are Looking for passwd files, configuration and properties files ; .ini  .cnf  logon.php ...
 ```
