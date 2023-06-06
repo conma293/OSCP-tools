@@ -117,6 +117,16 @@ You may already have a shell!
 if there is an FTP service running it is very likely it is related in some way, enumerate for creds (after checking for exploits)
 - Anonymous login
 - Remember FTP can be accessed via browser ```FTP://10.2.2.3/``` as well as via FTP from command line i.e.,   ```ftp 10.2.2.3```
+
+First check if you have command execution from within the FTP client:
+
+```
+!dir
+!whoami /all
+!C:\Temp\bad.exe
+```
+
+
 - Directory Traversal is a likely path here…
 #### Useful Directory Traversal locations:-
 We are Looking for passwd files, configuration and properties files ; .ini  .cnf  logon.php ...
@@ -138,7 +148,7 @@ ls /..//Windows\\System32\\
 /etc/apache/apache2.conf
 ```
 - Attempt to enumerate files to find credentials, other services running on hidden ports, upload and execute or swap binaries to be run.  
-- 
+
 #### SSH - likely nothing except a logon vector from enumerated usernames.
 ```hydra -l robert -P fasttrack.txt ssh://192.168.1.20 -t 4```
 
