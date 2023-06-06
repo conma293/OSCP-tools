@@ -126,6 +126,11 @@ First check if you have command execution from within the FTP client:
 !C:\Temp\bad.exe
 ```
 
+upload a webshell or binary:
+```
+put webshell.aspx
+put go.exe
+```
 
 - Directory Traversal is a likely path here…
 #### Useful Directory Traversal locations:-
