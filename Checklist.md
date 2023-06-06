@@ -877,6 +877,9 @@ exec "/bin/sh" (IRB)
 :set shell=/bin/bash:shell (vi)
 !sh (nmap)
 ```
+#### FTP
+Using FTP to access blacklisted appliactions (e.g., powershell in this instance) :
+``` echo !powershell.exe > ftpcommands.txt && ftp -s:ftpcommands.txt```
 
 #### Execute OS Commands from within SQL
 
