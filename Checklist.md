@@ -603,7 +603,12 @@ sc upnphost stop
 sc upnphost start
 ```
 
-
+still getting errors try this-
+```
+sc config SSDPSRV start= auto
+net start SSDPSRV
+net start upnphost
+```
 
 #### Unquoted Service Paths - race condition
 
